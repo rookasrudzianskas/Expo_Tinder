@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import tw from 'tailwind-react-native-classnames';
 
 
-export default function App() {
+const App = () => {
   return (
     <View style={tw`flex-1 items-center justify-center`}>
       <Text style={tw`text-2xl font-bold`}>Tinder 🚀</Text>
@@ -16,3 +16,6 @@ export default function App() {
 const styles = StyleSheet.create({
 
 });
+
+
+export default App;
