@@ -4,7 +4,7 @@ import tw from "tailwind-react-native-classnames";
 import styles from "./style";
 
 const TinderCard = (props) => {
-    const {name, image, bio} = props;
+    const {name, image, bio} = props.user;
 
     return (
             <View style={styles.card}>
