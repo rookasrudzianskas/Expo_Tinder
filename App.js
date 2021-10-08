@@ -12,8 +12,10 @@ const App = () => {
                 <ImageBackground
                     style={styles.image}
                     source={{uri: 'https://wallpaperaccess.com/full/2582345.jpg'}} >
-                    <Text style={{fontSize: 30, color: 'white', fontWeight: 'bold'}}>Rokas R.</Text>
-                    <Text style={{fontSize: 18, color: 'white', lineHeight: 25,}}>Creative fullstack developer. Enthusiastic Growth Hacker, Internet Marketer, and Adobe Creative Cloud Junky</Text>
+                    <View style={tw`p-6`}>
+                        <Text style={{fontSize: 30, color: 'white', fontWeight: 'bold',}}>Rokas R.</Text>
+                        <Text style={{fontSize: 18, color: 'white', lineHeight: 25,}}>Creative fullstack developer. Enthusiastic Growth Hacker, Internet Marketer, and Adobe Creative Cloud Junky</Text>
+                    </View>
                 </ImageBackground>
             </View>
         </View>
@@ -30,6 +32,7 @@ const styles = StyleSheet.create({
         overflow: 'hidden',
 
         justifyContent: 'flex-end',
+
 
     },
      card: {
