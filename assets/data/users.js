@@ -1,9 +1,9 @@
 export default [
   {
     id: '1',
-    name: 'Vadim Savin',
+    name: 'Rokas Rudzianskas',
     image:
-      'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim1.JPG',
+      'http://www.svietimonaujienos.lt/wp-content/uploads/2019/12/Rokas-e1575467263326.jpg',
     bio: 'I will be the semicolons to your code',
   },
   {
@@ -29,9 +29,9 @@ export default [
   },
   {
     id: '5',
-    name: 'Vadim Savin',
+    name: 'Rokas Rudzianskas',
     image:
-      'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim1.JPG',
+      'http://www.svietimonaujienos.lt/wp-content/uploads/2019/12/Rokas-e1575467263326.jpg',
     bio: 'Hola',
   },
 ];
