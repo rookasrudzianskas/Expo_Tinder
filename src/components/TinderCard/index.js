@@ -3,7 +3,9 @@ import {Text, View, StyleSheet, ImageBackground} from 'react-native';
 import tw from "tailwind-react-native-classnames";
 import styles from "./style";
 
-const TinderCard = () => {
+const TinderCard = (props) => {
+    const {name, image, bio} = props;
+
     return (
             <View style={styles.card}>
                 <View style={tw`flex-1 items-center justify-center`}>
