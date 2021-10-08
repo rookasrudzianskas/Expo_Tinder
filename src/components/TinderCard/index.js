@@ -11,10 +11,10 @@ const TinderCard = (props) => {
                 <View style={tw`flex-1 items-center justify-center`}>
                     <ImageBackground
                         style={styles.image}
-                        source={{uri: 'https://wallpaperaccess.com/full/2582345.jpg'}} >
+                        source={{uri: image}} >
                         <View style={tw`p-6`}>
-                            <Text style={{fontSize: 30, color: 'white', fontWeight: 'bold',}}>Rokas R.</Text>
-                            <Text style={{fontSize: 18, color: 'white', lineHeight: 25,}}>Creative fullstack developer. Enthusiastic Growth Hacker, Internet Marketer, and Adobe Creative Cloud Junky</Text>
+                            <Text style={{fontSize: 30, color: 'white', fontWeight: 'bold',}}>{name}</Text>
+                            <Text style={{fontSize: 18, color: 'white', lineHeight: 25,}}>{bio}</Text>
                         </View>
                     </ImageBackground>
                 </View>
