@@ -9,7 +9,7 @@ const App = () => {
     <View style={tw`flex-1 items-center justify-center`}>
         <View style={tw`flex-1 items-center justify-center`}>
         <Image
-            style={{width: 250, height: 250}}
+            style={styles.image}
             source={{uri: 'https://wallpaperaccess.com/full/2582345.jpg'}} />
         </View>
       <StatusBar style="auto" />
@@ -18,7 +18,10 @@ const App = () => {
 }
 
 const styles = StyleSheet.create({
-
+    image: {
+        width: 250,
+        height: 250
+    }
 });
 
 
