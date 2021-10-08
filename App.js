@@ -28,6 +28,9 @@ const styles = StyleSheet.create({
         height: "100%",
         borderRadius: 10,
         overflow: 'hidden',
+
+        justifyContent: 'flex-end',
+
     },
      card: {
          width: '95%',
