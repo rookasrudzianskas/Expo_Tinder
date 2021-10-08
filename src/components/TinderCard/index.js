@@ -5,7 +5,6 @@ import styles from "./style";
 
 const TinderCard = () => {
     return (
-        <View style={tw`flex-1 items-center justify-center`}>
             <View style={styles.card}>
                 <View style={tw`flex-1 items-center justify-center`}>
                     <ImageBackground
@@ -18,7 +17,6 @@ const TinderCard = () => {
                     </ImageBackground>
                 </View>
             </View>
-        </View>
     );
 };
 
