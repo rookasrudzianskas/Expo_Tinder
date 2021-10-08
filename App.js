@@ -11,7 +11,9 @@ const App = () => {
             <View style={tw`flex-1 items-center justify-center`}>
                 <ImageBackground
                     style={styles.image}
-                    source={{uri: 'https://wallpaperaccess.com/full/2582345.jpg'}} />
+                    source={{uri: 'https://wallpaperaccess.com/full/2582345.jpg'}} >
+                    <Text>Rokas R.</Text>
+                </ImageBackground>
             </View>
         </View>
       <StatusBar style="auto" />
