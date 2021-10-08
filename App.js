@@ -7,7 +7,7 @@ import tw from 'tailwind-react-native-classnames';
 const App = () => {
   return (
     <View style={tw`flex-1 items-center justify-center`}>
-        <View style={{width: '95%', backgroundColor: 'orange', height: '70%', borderRadius: 10,}}>
+        <View style={styles.card}>
             <View style={tw`flex-1 items-center justify-center`}>
                 <Image
                     style={styles.image}
@@ -24,7 +24,22 @@ const styles = StyleSheet.create({
         width: '100%',
         height: "100%",
         borderRadius: 10,
-    }
+    },
+     card: {
+         width: '95%',
+         backgroundColor: 'orange',
+         height: '70%',
+         borderRadius: 10,
+         shadowColor: "#000",
+         shadowOffset: {
+             width: 0,
+             height: 5,
+         },
+         shadowOpacity: 0.36,
+         shadowRadius: 6.68,
+
+         elevation: 11,
+     }
 });
 
 
