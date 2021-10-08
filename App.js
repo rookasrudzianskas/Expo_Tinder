@@ -12,7 +12,8 @@ const App = () => {
                 <ImageBackground
                     style={styles.image}
                     source={{uri: 'https://wallpaperaccess.com/full/2582345.jpg'}} >
-                    <Text>Rokas R.</Text>
+                    <Text style={{}}>Rokas R.</Text>
+                    <Text style={{}}>Creative fullstack developer, Brainlyemails & Connexious Founder and CEO. Enthusiastic Growth Hacker, Internet Marketer, and Adobe Creative Cloud Junky</Text>
                 </ImageBackground>
             </View>
         </View>
