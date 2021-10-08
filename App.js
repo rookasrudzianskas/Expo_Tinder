@@ -2,43 +2,20 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import {Image, ImageBackground, StyleSheet, Text, View} from 'react-native';
 import tw from 'tailwind-react-native-classnames';
+import TinderCard from "./src/components/TinderCard";
 
 
 const App = () => {
   return (
     <View style={tw`flex-1 items-center justify-center`}>
-
+        <TinderCard />
       <StatusBar style="auto" />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-    image: {
-        width: '100%',
-        height: "100%",
-        borderRadius: 10,
-        overflow: 'hidden',
 
-        justifyContent: 'flex-end',
-
-
-    },
-     card: {
-         width: '95%',
-         backgroundColor: 'orange',
-         height: '70%',
-         borderRadius: 10,
-         shadowColor: "#000",
-         shadowOffset: {
-             width: 0,
-             height: 5,
-         },
-         shadowOpacity: 0.36,
-         shadowRadius: 6.68,
-
-         elevation: 11,
-     }
 });
 
 
