@@ -20,5 +20,4 @@ const styles = StyleSheet.create({
 
 });
 
-// reanimated
 export default App;
