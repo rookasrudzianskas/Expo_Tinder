@@ -76,6 +76,13 @@ const App = () => {
         ),
     }));
 
+    const likeStyle = useAnimatedStyle({
+        opacity: 0,
+    });
+
+    const nopeStyle = useAnimatedStyle({
+        opacity: 0,
+    });
 
     const gestureHandler = useAnimatedGestureHandler({
         onStart: (_, context) => {
@@ -149,8 +156,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     like: {
-        width: 150,
-        height: 150,
+        width: 100,
+        height: 100,
         resizeMode: 'contain',
         position: 'absolute',
         top: 10,
