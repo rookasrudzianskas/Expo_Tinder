@@ -29,7 +29,7 @@ const SWIPE_VELOCITY = 800;
 
 const AnimatedStack = (props) => {
 
-    const {data, renderItem} = props;
+    const {data, renderItem, onSwipeRight, onSwipeLeft} = props;
     const ROTATION = 60;
     const [currentIndex, setCurrentIndex] = useState(0);
     const [nextIndex, setNextIndex] = useState(currentIndex + 1);
