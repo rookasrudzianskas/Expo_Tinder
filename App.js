@@ -103,16 +103,20 @@ const App = () => {
 
   return (
     <View style={styles.pageContainer}>
-        <View style={styles.nextCardContainer}>
-            <Animated.View style={[styles.animatedCard, nextCardStyle]}>
-                <TinderCard user={nextProfile} />
-            </Animated.View>
-        </View>
-        <PanGestureHandler onGestureEvent={gestureHandler} >
-            <Animated.View style={[styles.animatedCard, cardStyle]}>
-                <TinderCard user={currentProfile} />
-            </Animated.View>
-        </PanGestureHandler>
+        {nextProfile && (
+            <View style={styles.nextCardContainer}>
+                <Animated.View style={[styles.animatedCard, nextCardStyle]}>
+                    <TinderCard user={nextProfile} />
+                </Animated.View>
+            </View>
+        )}
+        {currentProfile && (
+            <PanGestureHandler onGestureEvent={gestureHandler} >
+                <Animated.View style={[styles.animatedCard, cardStyle]}>
+                    <TinderCard user={currentProfile} />
+                </Animated.View>
+            </PanGestureHandler>
+        )}
 
 
       <StatusBar style="auto" />
