@@ -5,6 +5,7 @@ import tw from 'tailwind-react-native-classnames';
 import TinderCard from "./src/components/TinderCard";
 import users from './assets/data/users.js';
 import Animated, {
+    interpolate,
     useAnimatedGestureHandler,
     useAnimatedStyle, useDerivedValue,
     useSharedValue,
@@ -18,9 +19,12 @@ import {PanGestureHandler} from "react-native-gesture-handler";
 const App = () => {
 
     const translateX = useSharedValue(0); /// -width             0            width
-    const rotate = useDerivedValue(() => {
-        return '10deg';                             // -60 - left,     0 - center,    60 - right
-    });
+    const rotate = useDerivedValue(() =>
+       interpolate(                          // -60 - left,     0 - center,    60 - right
+           translateX.value,
+           [0, width],
+           [0, 60]) + 'deg');
+
 
     const cardStyle = useAnimatedStyle(() => {
         return {
