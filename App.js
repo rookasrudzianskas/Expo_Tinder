@@ -122,8 +122,8 @@ const App = () => {
         {currentProfile && (
             <PanGestureHandler onGestureEvent={gestureHandler} >
                 <Animated.View style={[styles.animatedCard, cardStyle]}>
-                    <Image source={Like} style={[styles.like, {left: 10}, likeStyle]} />
-                    <Image source={Nope} style={[styles.like, {right: 10}, nopeStyle]} />
+                    <Animated.Image source={Like} style={[styles.like, {left: 10}, likeStyle]} />
+                    <Animated.Image source={Nope} style={[styles.like, {right: 10}, nopeStyle]} />
                     <TinderCard user={currentProfile} />
                 </Animated.View>
             </PanGestureHandler>
