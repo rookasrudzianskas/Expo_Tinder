@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     user: {
         width: 100,
         height: 100,
-        padding: 10,
+        padding: 8,
     },
     image: {
         width: '100%',
