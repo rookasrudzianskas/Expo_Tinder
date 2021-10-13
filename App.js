@@ -4,7 +4,7 @@ import {Image, ImageBackground, Pressable, StyleSheet, Text, TouchableOpacity, V
 import tw from 'tailwind-react-native-classnames';
 import TinderCard from "./src/components/TinderCard";
 import users from './assets/data/users.js';
-import Animated, {useAnimatedStyle, useSharedValue} from "react-native-reanimated";
+import Animated, {useAnimatedStyle, useSharedValue, withSpring} from "react-native-reanimated";
 
 
 
@@ -32,7 +32,7 @@ const App = () => {
 
 
       <StatusBar style="auto" />
-        <TouchableOpacity onPress={() => sharedValue.value = Math.random()}>
+        <TouchableOpacity onPress={() => sharedValue.value = withSpring(Math.random())}>
             <Text style={tw``}>Change Value</Text>
         </TouchableOpacity>
     </View>
