@@ -88,7 +88,10 @@ const App = () => {
                 return;
             }
 
-            translateX.value = withSpring(event.velocityX > 0 ? hiddenTranslateX : -hiddenTranslateX);
+            // will return 1 if the sign is +, if it is - it will return -1
+            translateX.value = withSpring(hiddenTranslateX * Math.sign(event.velocityX),
+
+                );
 
         }
     });
