@@ -4,7 +4,12 @@ import {Image, ImageBackground, Pressable, StyleSheet, Text, TouchableOpacity, V
 import tw from 'tailwind-react-native-classnames';
 import TinderCard from "./src/components/TinderCard";
 import users from './assets/data/users.js';
-import Animated, {useAnimatedStyle, useSharedValue, withSpring} from "react-native-reanimated";
+import Animated, {
+    useAnimatedGestureHandler,
+    useAnimatedStyle,
+    useSharedValue,
+    withSpring
+} from "react-native-reanimated";
 
 
 
@@ -23,6 +28,9 @@ const App = () => {
             opacity: sharedValue.value,
         };
     });
+
+
+    const gestureHandler = useAnimatedGestureHandler();
 
   return (
     <View style={styles.pageContainer}>
