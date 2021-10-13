@@ -77,11 +77,11 @@ const App = () => {
     }));
 
     const likeStyle = useAnimatedStyle(() => ({
-        opacity: 0
+        opacity: interpolate(translateX.value, [0, hiddenTranslateX / 5], [0, 1]),
     }));
 
     const nopeStyle = useAnimatedStyle(() => ({
-        opacity: 1,
+        opacity: interpolate(translateX.value, [0, -hiddenTranslateX / 5], [0, 1]),
     }));
 
     const gestureHandler = useAnimatedGestureHandler({
