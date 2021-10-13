@@ -19,7 +19,7 @@ const App = () => {
 
     const translateX = useSharedValue(0);
     const rotate = useDerivedValue(() => {
-
+        return '10deg';
     });
 
     const cardStyle = useAnimatedStyle(() => {
@@ -29,7 +29,7 @@ const App = () => {
                     translateX: translateX.value,
                 },
                 {
-                    rotate: '20deg',
+                    rotate: rotate.value,
                 }
             ],
         };
