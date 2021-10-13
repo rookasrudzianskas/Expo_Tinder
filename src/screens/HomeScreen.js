@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         flexGrow: 1,
+        width: '100%',
     },
 });
 
