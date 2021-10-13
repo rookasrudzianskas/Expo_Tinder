@@ -10,7 +10,7 @@ import {useSharedValue} from "react-native-reanimated";
 
 const App = () => {
 
-    const translateX = useSharedValue();
+    const translateX = useSharedValue(0);
 
   return (
     <View style={tw`flex-1 items-center justify-center`}>
