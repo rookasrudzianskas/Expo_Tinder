@@ -28,7 +28,7 @@ import {PanGestureHandler} from "react-native-gesture-handler";
 const App = () => {
 
     const ROTATION = 60;
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const [currentIndex, setCurrentIndex] = useState(2);
     const currentProfile = users[currentIndex];
     const {width: screenWidth} = useWindowDimensions();
     const hiddenTranslateX = 2 * screenWidth;
