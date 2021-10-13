@@ -81,7 +81,7 @@ const App = () => {
     }));
 
     const nopeStyle = useAnimatedStyle(() => ({
-        opacity: 0
+        opacity: 1,
     }));
 
     const gestureHandler = useAnimatedGestureHandler({
@@ -122,8 +122,8 @@ const App = () => {
         {currentProfile && (
             <PanGestureHandler onGestureEvent={gestureHandler} >
                 <Animated.View style={[styles.animatedCard, cardStyle]}>
-                    <Image source={Like} style={[styles.like, {left: 10}]} />
-                    <Image source={Nope} style={[styles.like, {right: 10}]} />
+                    <Image source={Like} style={[styles.like, {left: 10}, likeStyle]} />
+                    <Image source={Nope} style={[styles.like, {right: 10}, nopeStyle]} />
                     <TinderCard user={currentProfile} />
                 </Animated.View>
             </PanGestureHandler>
