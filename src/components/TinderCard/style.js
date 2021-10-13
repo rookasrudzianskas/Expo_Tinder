@@ -9,12 +9,11 @@ const styles = StyleSheet.create({
         overflow: 'hidden',
 
         justifyContent: 'flex-end',
-
-
+        backgroundColor: '#efefef',
     },
     card: {
         width: '100%',
-        backgroundColor: 'orange',
+        backgroundColor: '#efefef',
         height: '100%',
         borderRadius: 10,
         shadowColor: "#000",
