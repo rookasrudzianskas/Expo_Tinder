@@ -29,7 +29,7 @@ const SWIPE_VELOCITY = 800;
 
 const AnimatedStack = (props) => {
 
-    const {data} = props;
+    const {data, renderItem} = props;
     const ROTATION = 60;
     const [currentIndex, setCurrentIndex] = useState(0);
     const [nextIndex, setNextIndex] = useState(currentIndex + 1);
@@ -115,7 +115,7 @@ const AnimatedStack = (props) => {
             {nextProfile && (
                 <View style={styles.nextCardContainer}>
                     <Animated.View style={[styles.animatedCard, nextCardStyle]}>
-                        <TinderCard user={nextProfile} />
+                        {renderItem({item: nextProfile })}
                     </Animated.View>
                 </View>
             )}
@@ -124,13 +124,11 @@ const AnimatedStack = (props) => {
                     <Animated.View style={[styles.animatedCard, cardStyle]}>
                         <Animated.Image source={Like} style={[styles.like, {left: 10}, likeStyle]} />
                         <Animated.Image source={Nope} style={[styles.like, {right: 10}, nopeStyle]} />
-                        <TinderCard user={currentProfile} />
+                        {renderItem({item: currentProfile })}
                     </Animated.View>
                 </PanGestureHandler>
             )}
 
-
-            <StatusBar style="auto" />
             {/*<TouchableOpacity onPress={() => sharedValue.value = withSpring(Math.random())}>*/}
             {/*    <Text style={tw``}>Change Value</Text>*/}
             {/*</TouchableOpacity>*/}
