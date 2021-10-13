@@ -5,13 +5,15 @@ import {
     View
 } from 'react-native';
 import HomeScreen from "./src/screens/HomeScreen";
+import MatchesScreen from "./src/screens/MatchesScreen";
 
 
 const App = () => {
 
   return (
     <View style={styles.pageContainer}>
-        <HomeScreen />
+        {/*<HomeScreen />*/}
+        <MatchesScreen />
       <StatusBar style="auto" />
     </View>
   );
