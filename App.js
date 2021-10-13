@@ -33,7 +33,7 @@ const App = () => {
     const rotate = useDerivedValue(() =>
        interpolate(                          // -60 - left,     0 - center,    60 - right
            translateX.value,
-           [0, width],
+           [0, screenWidth],
            [0, 60]) + 'deg');
 
 
