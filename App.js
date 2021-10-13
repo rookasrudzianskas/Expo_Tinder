@@ -17,7 +17,7 @@ const App = () => {
 
   return (
     <View style={tw`flex-1 items-center justify-center`}>
-        <Animated.View style={[{width: '100%', height: '100%'}, cardStyle]}>
+        <Animated.View style={[{width: '100%', height: '100%'}]}>
             <TinderCard user={users[0]} />
         </Animated.View>
       <StatusBar style="auto" />
