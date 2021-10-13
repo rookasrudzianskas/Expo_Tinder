@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
     Image,
     ImageBackground,
@@ -93,9 +93,12 @@ const App = () => {
                 {},
                 () => runOnJS(setCurrentIndex)(currentIndex + 1),
             );
-
-        }
+        },
     });
+
+    useEffect(() => {
+
+    }, []);
 
   return (
     <View style={styles.pageContainer}>
