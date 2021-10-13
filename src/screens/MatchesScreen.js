@@ -29,12 +29,14 @@ export default MatchesScreen;
 
 const styles = StyleSheet.create({
     user: {
-        width: 150,
-        height: 150,
+        width: 100,
+        height: 100,
+        padding: 10,
     },
     image: {
         width: '100%',
         height: '100%',
+        borderRadius: 100,
     },
     users: {
         flexDirection: 'row',
