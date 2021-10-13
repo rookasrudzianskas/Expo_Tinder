@@ -97,6 +97,7 @@ const App = () => {
     });
 
     useEffect(() => {
+        translateX.value = 0;
         setNextIndex(currentIndex + 1);
     }, [currentIndex]);
 
