@@ -27,14 +27,16 @@ import {PanGestureHandler} from "react-native-gesture-handler";
 
 const App = () => {
 
+    const ROTATION = 60;
     const {width: screenWidth} = useWindowDimensions();
+    const hiddenTranslateX = 2 * screenWidth;
 
     const translateX = useSharedValue(0); /// -width             0            width
     const rotate = useDerivedValue(() =>
        interpolate(                          // -60 - left,     0 - center,    60 - right
            translateX.value,
-           [0, screenWidth],
-           [0, 60]) + 'deg');
+           [0, hiddenTranslateX],
+           [0, ROTATION]) + 'deg');
 
 
     const cardStyle = useAnimatedStyle(() => {
