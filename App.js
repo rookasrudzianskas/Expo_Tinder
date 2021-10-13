@@ -4,24 +4,14 @@ import {
     StyleSheet,
     View
 } from 'react-native';
-import TinderCard from "./src/components/TinderCard";
-import users from './assets/data/users.js';
-import AnimatedStack from "./src/components/AnimatedStack";
+import HomeScreen from "./src/screens/HomeScreen";
 
 
 const App = () => {
 
-    const onSwipeLeft = (user) => {
-        console.log('Swiped Left', user?.name);
-    }
-
-    const onSwipeRight = (user) => {
-        console.log('Swiped right', user?.name);
-    }
-
   return (
     <View style={styles.pageContainer}>
-        <AnimatedStack onSwipeLeft={onSwipeLeft} onSwipeRight={onSwipeRight} data={users} renderItem={({item}) => <TinderCard user={item} />} />
+        <HomeScreen />
       <StatusBar style="auto" />
     </View>
   );
