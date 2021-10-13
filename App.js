@@ -82,9 +82,9 @@ const App = () => {
         onActive: (event, context) => {
             translateX.value = context.startX + event.translationX;
         },
-        onEnd: () => {
+        onEnd: (event) => {
             if(event.velocityX < SWIPE_VELOCITY) {
-                translateX
+                translateX.value = 0;
             }
         }
     });
