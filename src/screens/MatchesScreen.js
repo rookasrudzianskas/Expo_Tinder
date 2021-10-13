@@ -12,8 +12,8 @@ const MatchesScreen = () => {
                     <Text style={tw`font-bold text-xl text-pink-400`}>
                         New Matches 🚀
                     </Text>
-                    {users.map((user) => (
-                        <View style={styles.user}>
+                    {users.map((user, index) => (
+                        <View key={index} style={styles.user}>
                             <Image source={{uri: user.image}} style={styles.image} />
                         </View>
                     )) }
