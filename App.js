@@ -152,6 +152,7 @@ const styles = StyleSheet.create({
     like: {
         width: 100,
         height: 100,
+        resizeMode: 'contain',
     }
 });
 
