@@ -6,7 +6,7 @@ import TinderCard from "./src/components/TinderCard";
 import users from './assets/data/users.js';
 import Animated, {
     useAnimatedGestureHandler,
-    useAnimatedStyle,
+    useAnimatedStyle, useDerivedValue,
     useSharedValue,
     withSpring
 } from "react-native-reanimated";
@@ -18,7 +18,9 @@ import {PanGestureHandler} from "react-native-gesture-handler";
 const App = () => {
 
     const translateX = useSharedValue(0);
+    const rotate = useDerivedValue(() => {
 
+    });
 
     const cardStyle = useAnimatedStyle(() => {
         return {
