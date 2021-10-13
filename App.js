@@ -23,6 +23,7 @@ import Animated, {
 import {PanGestureHandler} from "react-native-gesture-handler";
 
 
+const SWIPE_VELOCITY = 800;
 
 
 const App = () => {
@@ -82,6 +83,9 @@ const App = () => {
             translateX.value = context.startX + event.translationX;
         },
         onEnd: () => {
+            if(event.velocityX < SWIPE_VELOCITY) {
+                translateX
+            }
         }
     });
 
