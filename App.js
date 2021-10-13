@@ -115,6 +115,8 @@ const App = () => {
         {currentProfile && (
             <PanGestureHandler onGestureEvent={gestureHandler} >
                 <Animated.View style={[styles.animatedCard, cardStyle]}>
+                    <Image source={Like} style={styles.like} />
+                    <Image source={Nope} style={styles.like} />
                     <TinderCard user={currentProfile} />
                 </Animated.View>
             </PanGestureHandler>
@@ -147,6 +149,10 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
+    like: {
+        width: 100,
+        height: 100,
+    }
 });
 
 export default App;
