@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import {Image, ImageBackground, StyleSheet, Text, View} from 'react-native';
+import {Image, ImageBackground, Pressable, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import tw from 'tailwind-react-native-classnames';
 import TinderCard from "./src/components/TinderCard";
 import users from './assets/data/users.js';
@@ -24,7 +24,12 @@ const App = () => {
         <Animated.View style={[styles.animatedCard, cardStyle]}>
             <TinderCard user={users[0]} />
         </Animated.View>
+
+
       <StatusBar style="auto" />
+        <Pressable>
+            <Text style={tw``}>Change Value</Text>
+        </Pressable>
     </View>
   );
 }
