@@ -12,12 +12,16 @@ import AnimatedStack from "./src/components/AnimatedStack";
 const App = () => {
 
     const onSwipeLeft = (user) => {
-        console.log('Swiped Left');
+        console.log('Swiped Left', user?.name);
+    }
+
+    const onSwipeRight = (user) => {
+        console.log('Swiped right', user?.name);
     }
 
   return (
     <View style={styles.pageContainer}>
-        <AnimatedStack data={users} renderItem={({item}) => <TinderCard user={item} />} />
+        <AnimatedStack onSwipeLeft={onSwipeLeft} onSwipeRight={onSwipeRight} data={users} renderItem={({item}) => <TinderCard user={item} />} />
       <StatusBar style="auto" />
     </View>
   );
