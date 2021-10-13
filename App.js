@@ -27,7 +27,7 @@ const App = () => {
                     translateX: translateX.value,
                 },
                 {
-                    rotate: '60deg',
+                    rotate: '20deg',
                 }
             ],
         };
