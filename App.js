@@ -21,8 +21,8 @@ const App = () => {
 
 const styles = StyleSheet.create({
     pageContainer: {
-        justifyContent: 'center',
-        alignItems: 'center',
+        // justifyContent: 'center',
+        // alignItems: 'center',
         flexGrow: 1,
     },
 });
