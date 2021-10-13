@@ -32,10 +32,10 @@ const App = () => {
 
 
     const gestureHandler = useAnimatedGestureHandler({
-        onStart: (_) => {
+        onStart: (_, context) => {
             console.log('Touch start');
         },
-        onActive: (event) => {
+        onActive: (event, context) => {
             translateX.value = event.translationX;
         },
         onEnd: () => {
