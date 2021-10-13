@@ -141,6 +141,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         flexGrow: 1,
+        width: '100%',
     },
     animatedCard: {
         width: '90%',
@@ -149,6 +150,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     nextCardContainer: {
+
         ...StyleSheet.absoluteFillObject,
         justifyContent: 'center',
         alignItems: 'center',
