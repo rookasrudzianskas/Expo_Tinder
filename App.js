@@ -138,8 +138,8 @@ const styles = StyleSheet.create({
         flexGrow: 1,
     },
     animatedCard: {
-        width: '100%',
-        height: '100%',
+        width: '90%',
+        height: '70%',
         justifyContent: 'center',
         alignItems: 'center',
         flex: 1,
@@ -155,6 +155,7 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
         position: 'absolute',
         top: 10,
+
     }
 });
 
