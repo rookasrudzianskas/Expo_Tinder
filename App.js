@@ -10,14 +10,14 @@ import Animated, {useAnimatedStyle, useSharedValue} from "react-native-reanimate
 
 const App = () => {
 
-    const sharedValue = useSharedValue(0);
+    const sharedValue = useSharedValue(1);
     const cardStyle = useAnimatedStyle(() => ({
         opacity: sharedValue.value,
     }));
 
   return (
     <View style={styles.pageContainer}>
-        <Animated.View style={[styles.animatedCard]}>
+        <Animated.View style={[styles.animatedCard, cardStyle]}>
             <TinderCard user={users[0]} />
         </Animated.View>
       <StatusBar style="auto" />
@@ -36,7 +36,6 @@ const styles = StyleSheet.create({
         height: '100%',
         justifyContent: 'center',
         alignItems: 'center',
-        opacity: 0.5
     },
 });
 
