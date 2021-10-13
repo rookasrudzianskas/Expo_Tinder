@@ -11,9 +11,13 @@ import Animated, {useAnimatedStyle, useSharedValue} from "react-native-reanimate
 const App = () => {
 
     const sharedValue = useSharedValue(1);
-    const cardStyle = useAnimatedStyle(() => ({
-        opacity: sharedValue.value,
-    }));
+
+
+    const cardStyle = useAnimatedStyle(() => {
+        return {
+            opacity: sharedValue.value,
+        };
+    });
 
   return (
     <View style={styles.pageContainer}>
