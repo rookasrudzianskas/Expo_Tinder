@@ -11,6 +11,9 @@ import AnimatedStack from "./src/components/AnimatedStack";
 
 const App = () => {
 
+    const onSwipeLeft = (user) => {
+        console.log('Swiped Left');
+    }
 
   return (
     <View style={styles.pageContainer}>
