@@ -15,6 +15,11 @@ const App = () => {
 
     const cardStyle = useAnimatedStyle(() => {
         return {
+            translate: [
+                {
+                    positionX:
+                }
+            ],
             opacity: sharedValue.value,
         };
     });
