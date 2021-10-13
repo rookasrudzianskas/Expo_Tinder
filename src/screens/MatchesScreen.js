@@ -14,7 +14,7 @@ const MatchesScreen = () => {
                     </Text>
                     <View style={styles.users}>
                         {users.map((user, index) => (
-                            <View key={index} style={styles.user}>
+                            <View key={index} style={[styles.user, {marginHorizontal: 10, marginTop: 6}]}>
                                 <Image source={{uri: user.image}} style={styles.image} />
                             </View>
                         )) }
@@ -31,7 +31,11 @@ const styles = StyleSheet.create({
     user: {
         width: 100,
         height: 100,
-        padding: 8,
+        // padding: 8,
+        borderWidth: 2,
+        borderColor: '#F63A6e',
+        borderRadius: 100,
+        padding: 4,
     },
     image: {
         width: '100%',
@@ -41,5 +45,6 @@ const styles = StyleSheet.create({
     users: {
         flexDirection: 'row',
         flexWrap: 'wrap',
+
     },
 });
