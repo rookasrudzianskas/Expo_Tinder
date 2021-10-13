@@ -56,6 +56,23 @@ const App = () => {
         };
     });
 
+    const nextCardStyle = useAnimatedStyle(() => ({
+        transform: [
+            {
+                scale: interpolate(
+                    translateX.value,
+                    [-hiddenTranslateX, 0, hiddenTranslateX],
+                    [1, 0.8, 1],
+                ),
+            },
+        ],
+        opacity: interpolate(
+            translateX.value,
+            [-hiddenTranslateX, 0, hiddenTranslateX],
+            [1, 0.5, 1],
+        ),
+    }));
+
 
     const gestureHandler = useAnimatedGestureHandler({
         onStart: (_, context) => {
@@ -65,14 +82,15 @@ const App = () => {
             translateX.value = context.startX + event.translationX;
         },
         onEnd: () => {
-            console.warn('ended');
         }
     });
 
   return (
     <View style={styles.pageContainer}>
         <View style={styles.nextCardContainer}>
-            <TinderCard user={nextProfile} />
+            <Animated.View style={[styles.animatedCard, nextCardStyle]}>
+                <TinderCard user={nextProfile} />
+            </Animated.View>
         </View>
         <PanGestureHandler onGestureEvent={gestureHandler} >
             <Animated.View style={[styles.animatedCard, cardStyle]}>
