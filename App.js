@@ -17,9 +17,9 @@ import {PanGestureHandler} from "react-native-gesture-handler";
 
 const App = () => {
 
-    const translateX = useSharedValue(0);
+    const translateX = useSharedValue(0); /// -width             0            width
     const rotate = useDerivedValue(() => {
-        return '10deg';
+        return '10deg';                             // -60 - left,     0 - center,    60 - right
     });
 
     const cardStyle = useAnimatedStyle(() => {
