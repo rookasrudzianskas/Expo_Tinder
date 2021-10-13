@@ -14,7 +14,7 @@ import tw from 'tailwind-react-native-classnames';
 import TinderCard from "./src/components/TinderCard";
 import users from './assets/data/users.js';
 import Animated, {
-    interpolate,
+    interpolate, runOnJS,
     useAnimatedGestureHandler,
     useAnimatedStyle, useDerivedValue,
     useSharedValue,
@@ -90,8 +90,9 @@ const App = () => {
 
             // will return 1 if the sign is +, if it is - it will return -1
             translateX.value = withSpring(hiddenTranslateX * Math.sign(event.velocityX),
-
-                );
+                {},
+                () => runOnJS(setCurrentIndex)(currentIndex + 1),
+            );
 
         }
     });
