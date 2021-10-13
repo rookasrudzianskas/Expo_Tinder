@@ -27,9 +27,9 @@ const App = () => {
 
 
       <StatusBar style="auto" />
-        <Pressable onPress={() => sharedValue.value = Math.random()}>
+        <TouchableOpacity onPress={() => sharedValue.value = Math.random()}>
             <Text style={tw``}>Change Value</Text>
-        </Pressable>
+        </TouchableOpacity>
     </View>
   );
 }
@@ -41,8 +41,8 @@ const styles = StyleSheet.create({
         flexGrow: 1,
     },
     animatedCard: {
-        width: '100%',
-        height: '100%',
+        width: '90%',
+        height: '70%',
         justifyContent: 'center',
         alignItems: 'center',
     },
