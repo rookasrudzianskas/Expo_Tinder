@@ -21,6 +21,8 @@ import Animated, {
     withSpring
 } from "react-native-reanimated";
 import {PanGestureHandler} from "react-native-gesture-handler";
+import Like from './assets/images/LIKE.png';
+import Nope from './assets/images/nope.png';
 
 
 const SWIPE_VELOCITY = 800;
