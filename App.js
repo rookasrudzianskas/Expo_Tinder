@@ -36,6 +36,9 @@ const App = () => {
         },
         onActive: (event) => {
             console.log(`touch x is ${event.translationX}`);
+        },
+        onEnd: () => {
+            console.log('ended');
         }
     });
 
