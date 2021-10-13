@@ -17,17 +17,16 @@ import {PanGestureHandler} from "react-native-gesture-handler";
 
 const App = () => {
 
-    const sharedValue = useSharedValue(1);
+    const translateX = useSharedValue(0);
 
 
     const cardStyle = useAnimatedStyle(() => {
         return {
             transform: [
                 {
-                    translateX: sharedValue.value * 500 - 250,
+                    translateX: translateX.value,
                 }
             ],
-            opacity: sharedValue.value,
         };
     });
 
@@ -37,16 +36,16 @@ const App = () => {
             console.log('Touch start');
         },
         onActive: (event) => {
-            console.log(`touch x is ${event.translationX}`);
+            translateX.value = event.translationX;
         },
         onEnd: () => {
-            console.log('ended');
+            console.warn('ended');
         }
     });
 
   return (
     <View style={styles.pageContainer}>
-        <PanGestureHandler gestureHandler={gestureHandler} >
+        <PanGestureHandler onGestureEvent={gestureHandler} >
             <Animated.View style={[styles.animatedCard, cardStyle]}>
                 <TinderCard user={users[0]} />
             </Animated.View>
