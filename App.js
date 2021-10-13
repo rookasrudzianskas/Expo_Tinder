@@ -17,7 +17,7 @@ const App = () => {
         return {
             transform: [
                 {
-                    translateX: sharedValue.value * 100,
+                    translateX: sharedValue.value * 500 - 250,
                 }
             ],
             opacity: sharedValue.value,
