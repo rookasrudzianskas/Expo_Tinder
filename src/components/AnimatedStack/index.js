@@ -111,7 +111,7 @@ const AnimatedStack = (props) => {
     }, [currentIndex, translateX]);
 
     return (
-        <View style={styles.pageContainer}>
+        <View style={styles.root}>
             {nextProfile && (
                 <View style={styles.nextCardContainer}>
                     <Animated.View style={[styles.animatedCard, nextCardStyle]}>
@@ -137,7 +137,7 @@ const AnimatedStack = (props) => {
 }
 
 const styles = StyleSheet.create({
-    pageContainer: {
+    root: {
         justifyContent: 'center',
         alignItems: 'center',
         flexGrow: 1,
