@@ -76,13 +76,13 @@ const App = () => {
         ),
     }));
 
-    const likeStyle = useAnimatedStyle({
-        opacity: 0,
-    });
+    const likeStyle = useAnimatedStyle(() => ({
+        opacity: 0
+    }));
 
-    const nopeStyle = useAnimatedStyle({
-        opacity: 0,
-    });
+    const nopeStyle = useAnimatedStyle(() => ({
+        opacity: 0
+    }));
 
     const gestureHandler = useAnimatedGestureHandler({
         onStart: (_, context) => {
