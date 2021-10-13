@@ -10,7 +10,7 @@ import Animated, {useAnimatedStyle, useSharedValue} from "react-native-reanimate
 
 const App = () => {
 
-    const sharedValue = useSharedValue(1);
+    const sharedValue = useSharedValue(0);
     const cardStyle = useAnimatedStyle(() => ({
         opacity: sharedValue.value,
     }));
@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
         height: '100%',
         justifyContent: 'center',
         alignItems: 'center',
+        opacity: 0.5
     },
 });
 
