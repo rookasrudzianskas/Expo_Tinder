@@ -97,8 +97,8 @@ const App = () => {
     });
 
     useEffect(() => {
-
-    }, []);
+        setNextIndex(currentIndex + 1);
+    }, [currentIndex]);
 
   return (
     <View style={styles.pageContainer}>
