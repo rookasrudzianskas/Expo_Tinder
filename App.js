@@ -98,6 +98,7 @@ const styles = StyleSheet.create({
         height: '70%',
         justifyContent: 'center',
         alignItems: 'center',
+        flex: 1,
     },
     nextCardContainer: {
         ...StyleSheet.absoluteFillObject,
