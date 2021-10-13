@@ -27,7 +27,7 @@ const App = () => {
 
 
       <StatusBar style="auto" />
-        <Pressable>
+        <Pressable onPress={() => sharedValue.value = Math.random()}>
             <Text style={tw``}>Change Value</Text>
         </Pressable>
     </View>
