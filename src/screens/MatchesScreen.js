@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
         height: '100%',
     },
     users: {
-
+        flexDirection: 'row',
+        flexWrap: 'wrap',
     },
 });
