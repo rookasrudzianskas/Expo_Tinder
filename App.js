@@ -16,8 +16,8 @@ const App = () => {
     }));
 
   return (
-    <View style={tw`flex-1 items-center justify-center`}>
-        <Animated.View style={[styles.animatedCard, cardStyle]}>
+    <View style={styles.pageContainer}>
+        <Animated.View style={[styles.animatedCard]}>
             <TinderCard user={users[0]} />
         </Animated.View>
       <StatusBar style="auto" />
@@ -26,13 +26,17 @@ const App = () => {
 }
 
 const styles = StyleSheet.create({
+    pageContainer: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        flex: 1,
+    },
     animatedCard: {
         width: '100%',
         height: '100%',
         justifyContent: 'center',
         alignItems: 'center',
-        // opacity: 0.5
-    }
+    },
 });
 
 export default App;
