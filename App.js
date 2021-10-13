@@ -1,6 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import {Image, ImageBackground, Pressable, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {
+    Image,
+    ImageBackground,
+    Pressable,
+    StyleSheet,
+    Text,
+    TouchableOpacity,
+    useWindowDimensions,
+    View
+} from 'react-native';
 import tw from 'tailwind-react-native-classnames';
 import TinderCard from "./src/components/TinderCard";
 import users from './assets/data/users.js';
@@ -17,6 +26,8 @@ import {PanGestureHandler} from "react-native-gesture-handler";
 
 
 const App = () => {
+
+    const {width: screenWidth} = useWindowDimensions();
 
     const translateX = useSharedValue(0); /// -width             0            width
     const rotate = useDerivedValue(() =>
