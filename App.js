@@ -29,6 +29,8 @@ const App = () => {
 
     const ROTATION = 60;
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [nextIndex, setNextIndex] = useState(currentIndex + 1);
+    const nextProfile = users[nextIndex];
     const currentProfile = users[currentIndex];
     const {width: screenWidth} = useWindowDimensions();
     const hiddenTranslateX = 2 * screenWidth;
@@ -70,7 +72,7 @@ const App = () => {
   return (
     <View style={styles.pageContainer}>
         <View style={styles.nextCardContainer}>
-            <TinderCard user={currentProfile} />
+            <TinderCard user={nextProfile} />
         </View>
         <PanGestureHandler onGestureEvent={gestureHandler} >
             <Animated.View style={[styles.animatedCard, cardStyle]}>
