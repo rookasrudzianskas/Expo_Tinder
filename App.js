@@ -10,6 +10,8 @@ import Animated, {
     useSharedValue,
     withSpring
 } from "react-native-reanimated";
+import {PanGestureHandler} from "react-native-gesture-handler";
+
 
 
 
@@ -44,15 +46,17 @@ const App = () => {
 
   return (
     <View style={styles.pageContainer}>
-        <Animated.View style={[styles.animatedCard, cardStyle]}>
-            <TinderCard user={users[0]} />
-        </Animated.View>
+        <PanGestureHandler gestureHandler={gestureHandler} >
+            <Animated.View style={[styles.animatedCard, cardStyle]}>
+                <TinderCard user={users[0]} />
+            </Animated.View>
+        </PanGestureHandler>
 
 
       <StatusBar style="auto" />
-        <TouchableOpacity onPress={() => sharedValue.value = withSpring(Math.random())}>
-            <Text style={tw``}>Change Value</Text>
-        </TouchableOpacity>
+        {/*<TouchableOpacity onPress={() => sharedValue.value = withSpring(Math.random())}>*/}
+        {/*    <Text style={tw``}>Change Value</Text>*/}
+        {/*</TouchableOpacity>*/}
     </View>
   );
 }
