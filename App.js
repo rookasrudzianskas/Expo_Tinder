@@ -83,7 +83,7 @@ const App = () => {
             translateX.value = context.startX + event.translationX;
         },
         onEnd: (event) => {
-            if(Math.abs(event.velocityX < SWIPE_VELOCITY)) {
+            if(Math.abs(event.velocityX) < SWIPE_VELOCITY) {
                 translateX.value = withSpring(0);
                 return;
             }
