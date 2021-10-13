@@ -71,7 +71,7 @@ const App = () => {
     <View style={styles.pageContainer}>
         <PanGestureHandler onGestureEvent={gestureHandler} >
             <Animated.View style={[styles.animatedCard, cardStyle]}>
-                <TinderCard user={users[0]} />
+                <TinderCard user={currentProfile} />
             </Animated.View>
         </PanGestureHandler>
 
