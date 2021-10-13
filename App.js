@@ -28,7 +28,7 @@ import {PanGestureHandler} from "react-native-gesture-handler";
 const App = () => {
 
     const ROTATION = 60;
-    const [currentIndex, setCurrentIndex] = useState(2);
+    const [currentIndex, setCurrentIndex] = useState(0);
     const currentProfile = users[currentIndex];
     const {width: screenWidth} = useWindowDimensions();
     const hiddenTranslateX = 2 * screenWidth;
@@ -69,6 +69,9 @@ const App = () => {
 
   return (
     <View style={styles.pageContainer}>
+        <View style={styles.nextCardContainer}>
+            <TinderCard user={currentProfile} />
+        </View>
         <PanGestureHandler onGestureEvent={gestureHandler} >
             <Animated.View style={[styles.animatedCard, cardStyle]}>
                 <TinderCard user={currentProfile} />
@@ -95,6 +98,12 @@ const styles = StyleSheet.create({
         height: '70%',
         justifyContent: 'center',
         alignItems: 'center',
+    },
+    nextCardContainer: {
+        ...StyleSheet.absoluteFillObject,
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'absolute',
     },
 });
 
