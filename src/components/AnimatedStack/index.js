@@ -102,6 +102,8 @@ const AnimatedStack = (props) => {
                 {},
                 () => runOnJS(setCurrentIndex)(currentIndex + 1),
             );
+
+            const onSwipe = event.velocityX > 0 ? onSwipeRight : onSwipeLeft;
         },
     });
 
