@@ -30,7 +30,14 @@ const App = () => {
     });
 
 
-    const gestureHandler = useAnimatedGestureHandler();
+    const gestureHandler = useAnimatedGestureHandler({
+        onStart: (_) => {
+            console.log('Touch start');
+        },
+        onActive: (event) => {
+            console.log(`touch x is ${event.translationX}`);
+        }
+    });
 
   return (
     <View style={styles.pageContainer}>
