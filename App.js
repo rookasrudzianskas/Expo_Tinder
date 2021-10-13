@@ -87,6 +87,9 @@ const App = () => {
                 translateX.value = withSpring(0);
                 return;
             }
+
+            translateX.value = withSpring(event.velocityX > 0 ? hiddenTranslateX : -hiddenTranslateX);
+
         }
     });
 
