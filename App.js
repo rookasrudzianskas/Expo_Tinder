@@ -25,6 +25,9 @@ const App = () => {
             transform: [
                 {
                     translateX: translateX.value,
+                },
+                {
+                    rotate: '60deg',
                 }
             ],
         };
@@ -71,7 +74,6 @@ const styles = StyleSheet.create({
         height: '70%',
         justifyContent: 'center',
         alignItems: 'center',
-        rotate: '60deg',
     },
 });
 
