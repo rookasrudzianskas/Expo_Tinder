@@ -149,14 +149,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     like: {
-        width: 100,
-        height: 100,
+        width: 150,
+        height: 150,
         resizeMode: 'contain',
         position: 'absolute',
         top: 10,
         zIndex: 1,
-        elevation: 1,
-
     }
 });
 
