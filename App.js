@@ -103,7 +103,6 @@ const styles = StyleSheet.create({
         ...StyleSheet.absoluteFillObject,
         justifyContent: 'center',
         alignItems: 'center',
-        position: 'absolute',
     },
 });
 
