@@ -14,6 +14,7 @@ import tw from "tailwind-react-native-classnames";
 const App = () => {
 
     const color = '#b5b5b5';
+    const activeColor = '#ff0065';
 
   return (
       <SafeAreaView style={{flex: 1,}}>
