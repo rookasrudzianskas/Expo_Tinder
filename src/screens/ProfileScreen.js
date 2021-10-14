@@ -14,7 +14,8 @@ const ProfileScreen = () => {
 
     const [name, setName] = useState('');
     const [bio, setBio] = useState('');
-    const [selectedLanguage, setSelectedLanguage] = useState();
+    const [gender, setGender] = useState();
+    const [lookingFor, setLookingFor] = useState();
 
     const save = () => {
 
@@ -35,12 +36,23 @@ const ProfileScreen = () => {
                 </View>
 
                 <Picker
-                    selectedValue={selectedLanguage}
+                    label="Gender"
+                    selectedValue={gender}
                     onValueChange={(itemValue, itemIndex) =>
-                        setSelectedLanguage(itemValue)
+                        setGender(itemValue)
                     }>
-                    <Picker.Item label="Java" value="java" />
-                    <Picker.Item label="JavaScript" value="js" />
+                    <Picker.Item label="Male" value="MALE" />
+                    <Picker.Item label="Female" value="FEMALE" />
+                </Picker>
+
+                <Picker
+                    label="Looking for"
+                    selectedValue={lookingFor}
+                    onValueChange={(itemValue, itemIndex) =>
+                        setLookingFor(itemValue)
+                    }>
+                    <Picker.Item label="Male" value="MALE" />
+                    <Picker.Item label="Female" value="FEMALE" />
                 </Picker>
 
                 <TouchableOpacity onPress={save}>
