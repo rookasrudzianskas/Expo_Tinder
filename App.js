@@ -19,11 +19,11 @@ const App = () => {
       <SafeAreaView style={{flex: 1,}}>
         <View style={styles.pageContainer}>
             {/*<HomeScreen />*/}
-            <View style={[tw`flex flex-row`, {justifyContent: 'space-around', width: '100%'}]}>
-                <Fontisto name="tinder" size={24} color={'#ff0065'} />
-                <MaterialCommunityIcons name="star-four-points" size={24} color={color} />
-                <Ionicons name="ios-chatbubbles" size={24} color={color} />
-                <FontAwesome name="user" size={24} color={color} />
+            <View style={[tw`flex flex-row pt-16`, {justifyContent: 'space-around', width: '100%'}]}>
+                <Fontisto name="tinder" size={30} color={'#ff0065'} />
+                <MaterialCommunityIcons name="star-four-points" size={30} color={color} />
+                <Ionicons name="ios-chatbubbles" size={30} color={color} />
+                <FontAwesome name="user" size={30} color={color} />
             </View>
             <MatchesScreen />
           <StatusBar style="auto" />
