@@ -32,8 +32,9 @@ const App = () => {
                     <FontAwesome name="user" size={30} color={color} />
                 </View>
 
-                <HomeScreen />
-
+                {/*<HomeScreen />*/}
+                {activeScreen === 'HOME' && <HomeScreen />}
+                {activeScreen === 'CHAT' && <MatchesScreen />}
                 {/*<MatchesScreen />*/}
                 <StatusBar style="auto" />
             </View>
