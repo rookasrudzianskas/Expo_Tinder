@@ -12,7 +12,9 @@ import tw from "tailwind-react-native-classnames";
 import Pressable from "react-native/Libraries/Components/Pressable/Pressable";
 
 import Amplify from 'aws-amplify'
-import config from './src/aws-exports'
+import config from './src/aws-exports';
+import { withAuthenticator } from "aws-amplify-react-native";
+
 Amplify.configure({
     ...config,
     Analytics: {
@@ -59,4 +61,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default App;
+export default withAuthenticator(App);
