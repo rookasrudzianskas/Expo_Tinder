@@ -14,6 +14,8 @@ const ProfileScreen = () => {
     //     sign out
     }
 
+    const [user, setUser] = useState(null);
+
     const [name, setName] = useState('');
     const [bio, setBio] = useState('');
     const [gender, setGender] = useState();
@@ -32,6 +34,7 @@ const ProfileScreen = () => {
             }
 
             const dbUser = dbUsers[0];
+            setUser(dbUser);
             setName(dbUser.name);
             setBio(dbUser.bio);
             setGender(dbUser.gender);
