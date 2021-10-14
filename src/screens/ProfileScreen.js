@@ -55,12 +55,14 @@ const ProfileScreen = () => {
         // ------------------------------------------------------------------------------
 
         if(user) {
-            user.name = name;
-            user.bio = bio;
-            user.gender = gender;
-            user.lookingFor = lookingFor;
+            const updatedUser = User.copyOf(user, updated => {
+                updated.name = name;
+                updated.bio = bio;
+                updated.gender = gender;
+                updated.lookingFor = lookingFor;
+            })
 
-            await DataStore.save(user).then();
+            await DataStore.save(updatedUser).then();
         } else {
             // create a new user
             const authUser = await Auth.currentAuthenticatedUser();
