@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useEffect, useState} from 'react';
 import {
+    SafeAreaView,
     StyleSheet,
     View
 } from 'react-native';
@@ -12,12 +13,14 @@ import {Fontisto} from "@expo/vector-icons";
 const App = () => {
 
   return (
-    <View style={styles.pageContainer}>
-        {/*<HomeScreen />*/}
-        <Fontisto name="tinder" size={24} color={'#ff0065'} />
-        <MatchesScreen />
-      <StatusBar style="auto" />
-    </View>
+      <SafeAreaView>
+        <View style={styles.pageContainer}>
+            {/*<HomeScreen />*/}
+            <Fontisto name="tinder" size={24} color={'#ff0065'} />
+            <MatchesScreen />
+          <StatusBar style="auto" />
+        </View>
+      </SafeAreaView>
   );
 }
 
