@@ -33,6 +33,17 @@ const ProfileScreen = () => {
                 return;
             }
 
+            if(user) {
+                user.name = name;
+                user.bio = bio;
+                user.gender = gender;
+                user.lookingFor = lookingFor;
+
+                DataStore.save(user);
+            } else {
+                // create a new user
+            }
+
             const dbUser = dbUsers[0];
             setUser(dbUser);
             setName(dbUser.name);
