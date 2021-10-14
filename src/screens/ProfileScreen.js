@@ -39,9 +39,21 @@ const ProfileScreen = () => {
                 user.gender = gender;
                 user.lookingFor = lookingFor;
 
-                DataStore.save(user);
+                DataStore.save(user).then();
             } else {
                 // create a new user
+                const user = await Auth.currentAuthenticatedUser();
+
+                const newUser = new User({
+                    sub: user.attributes.sub,
+                    name: name,
+                    bio: bio,
+                    gender,
+                    lookingFor,
+                    image: 'http://www.svietimonaujienos.lt/wp-content/uploads/2019/12/Rokas-e1575467263326.jpg',
+                });
+
+                DataStore.save(newUser).then();
             }
 
             const dbUser = dbUsers[0];
