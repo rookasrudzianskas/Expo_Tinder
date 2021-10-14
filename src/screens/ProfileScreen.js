@@ -53,6 +53,7 @@ const ProfileScreen = () => {
         }
 
         // ------------------------------------------------------------------------------
+
         if(user) {
             user.name = name;
             user.bio = bio;
@@ -75,6 +76,7 @@ const ProfileScreen = () => {
 
             DataStore.save(newUser).then();
         }
+
         //------------------------------------------------------------------------------
 
         Alert.alert("User saved successfully");
