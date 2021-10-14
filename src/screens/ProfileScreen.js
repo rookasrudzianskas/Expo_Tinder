@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Text, View, StyleSheet, SafeAreaView, Image, TouchableOpacity, TextInput} from 'react-native';
 import tw from "tailwind-react-native-classnames";
 import users from "../../assets/data/users";
@@ -22,6 +22,15 @@ const ProfileScreen = () => {
     const isValid = () => {
         return name && bio && gender && lookingFor;
     }
+
+    useEffect(() => {
+        const getCurrentUser = async () => {
+            const user = await Auth.currentAuthenticatedUser();
+            const dbUser = await DataStore.query(User, u => u.sub === user.attributes.sub);
+            console.log(dbUser);
+        };
+        getCurrentUser();
+    }, []);
 
     const save = async () => {
         if (!isValid()) {
