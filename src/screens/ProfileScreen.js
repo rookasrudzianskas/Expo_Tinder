@@ -32,6 +32,7 @@ const ProfileScreen = () => {
             bio: bio,
             gender,
             lookingFor,
+            image: 'http://www.svietimonaujienos.lt/wp-content/uploads/2019/12/Rokas-e1575467263326.jpg',
         });
 
         DataStore.save(newUser).then();
