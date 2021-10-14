@@ -24,7 +24,7 @@ const ProfileScreen = () => {
 
                 <View style={tw`mt-10`}>
                     <TextInput value={name} onChangeText={setName} placeholder={'Enter your name'} />
-                    <TextInput value={bio} onChangeText={setBio} placeholder={'Enter your name'} />
+                    <TextInput multiline numberOfLines={3} value={bio} onChangeText={setBio} placeholder={'Enter your bio'} />
                 </View>
             </View>
         </SafeAreaView>
