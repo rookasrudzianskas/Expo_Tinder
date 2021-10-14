@@ -21,13 +21,13 @@ const App = () => {
       <SafeAreaView style={{flex: 1,}}>
         <View style={styles.pageContainer}>
             <View style={[tw`flex flex-row mt-6 -mb-20`, {justifyContent: 'space-around', width: '100%'}]}>
-                <TouchableOpacity activeOpacity={0.5}>
+                <TouchableOpacity activeOpacity={0.5} onPress={() => setActiveScreen('HOME')}>
                     <Fontisto name="tinder" size={30} color={'#ff0065'} />
                 </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.5}>
-                    <MaterialCommunityIcons name="star-four-points" size={30} color={color} />
+                <MaterialCommunityIcons name="star-four-points" size={30} color={color} />
+                <TouchableOpacity activeOpacity={0.5} onPress={() => setActiveScreen('CHAT')}>
+                    <Ionicons name="ios-chatbubbles" size={30} color={color} />
                 </TouchableOpacity>
-                <Ionicons name="ios-chatbubbles" size={30} color={color} />
                 <FontAwesome name="user" size={30} color={color} />
             </View>
             <HomeScreen />
