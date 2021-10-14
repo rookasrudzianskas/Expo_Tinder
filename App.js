@@ -33,23 +33,25 @@ const App = () => {
     return (
         <SafeAreaView style={{flex: 1,}}>
             <View style={styles.pageContainer}>
-                <View style={[tw`flex flex-row mt-6`, {justifyContent: 'space-around', width: '100%'}]}>
-                    <TouchableOpacity onPress={() => setActiveScreen('HOME')}>
-                        <Fontisto name="tinder" size={30} color={activeScreen === 'HOME' ? activeColor  : color} />
-                    </TouchableOpacity>
-                    <MaterialCommunityIcons name="star-four-points" size={30} color={color} />
-                    <Pressable onPress={() => setActiveScreen('CHAT')}>
-                        <Ionicons name="ios-chatbubbles" size={30} color={activeScreen === 'CHAT' ? activeColor  : color} />
-                    </Pressable>
-                    <Pressable onPress={() => setActiveScreen('PROFILE')}>
-                        <FontAwesome name="user" size={30} color={activeScreen === 'PROFILE' ? activeColor  : color} />
-                    </Pressable>
-                </View>
+                {/*{activeScreen === 'HOME' || activeScreen === 'CHAT' && (*/}
+                    <View style={[tw`flex flex-row mt-6`, {justifyContent: 'space-around', width: '100%'}]}>
+                        <TouchableOpacity onPress={() => setActiveScreen('HOME')}>
+                            <Fontisto name="tinder" size={30} color={activeScreen === 'HOME' ? activeColor  : color} />
+                        </TouchableOpacity>
+                        <MaterialCommunityIcons name="star-four-points" size={30} color={color} />
+                        <Pressable onPress={() => setActiveScreen('CHAT')}>
+                            <Ionicons name="ios-chatbubbles" size={30} color={activeScreen === 'CHAT' ? activeColor  : color} />
+                        </Pressable>
+                        <Pressable onPress={() => setActiveScreen('PROFILE')}>
+                            <FontAwesome name="user" size={30} color={activeScreen === 'PROFILE' ? activeColor  : color} />
+                        </Pressable>
+                    </View>
+                {/*)}*/}
 
                 {/*<HomeScreen />*/}
                 {activeScreen === 'HOME' && <HomeScreen />}
                 {activeScreen === 'CHAT' && <MatchesScreen />}
-                {activeScreen === 'CHAT' && <ProfileScreen />}
+                {activeScreen === 'PROFILE' && <ProfileScreen />}
                 {/*<MatchesScreen />*/}
                 <StatusBar style="auto" />
             </View>
