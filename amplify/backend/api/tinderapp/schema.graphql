@@ -17,5 +17,6 @@ type User @model @auth(rules: [{allow: private}]) {
   bio: String!
   gender: Genders!
   lookingFor: Genders!
+  sub: String!
 }
  
