@@ -13,6 +13,11 @@ const ProfileScreen = () => {
 
     const [name, setName] = useState('');
     const [bio, setBio] = useState('');
+
+    const save = () => {
+
+    }
+
     return (
 
         <SafeAreaView>
@@ -27,7 +32,7 @@ const ProfileScreen = () => {
                     <TextInput style={tw`mt-3 text-lg`} multiline numberOfLines={3} value={bio} onChangeText={setBio} placeholder={'Enter your bio'} />
                 </View>
 
-                <TouchableOpacity>
+                <TouchableOpacity onPress={save}>
                     <View style={tw`bg-green-500 px-10 mt-4 py-4 rounded-lg`}>
                         <Text style={tw`font-bold`}>Save</Text>
                     </View>
