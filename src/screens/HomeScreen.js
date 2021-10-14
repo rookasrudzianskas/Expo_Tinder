@@ -57,6 +57,7 @@ const HomeScreen = () => {
 
 const styles = StyleSheet.create({
     pageContainer: {
+        // marginTop: -100,
         justifyContent: 'center',
         alignItems: 'center',
         flexGrow: 1,
