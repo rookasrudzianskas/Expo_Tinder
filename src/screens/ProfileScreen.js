@@ -4,6 +4,8 @@ import tw from "tailwind-react-native-classnames";
 import users from "../../assets/data/users";
 import {Auth} from 'aws-amplify';
 import {Picker} from '@react-native-picker/picker';
+import {DataStore} from 'aws-amplify';
+import {User} from "../models";
 
 const ProfileScreen = () => {
 
@@ -23,8 +25,16 @@ const ProfileScreen = () => {
 
     const save = () => {
         if(!isValid()) {
-
+            console.log('Not Valid');
         }
+        const newUser = new User({
+            name: name,
+            bio: bio,
+            gender,
+            lookingFor,
+        });
+
+        DataStore.save(newUser).then();
     }
 
     return (
