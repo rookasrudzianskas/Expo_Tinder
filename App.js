@@ -11,6 +11,15 @@ import {FontAwesome, Fontisto, Ionicons, MaterialCommunityIcons} from "@expo/vec
 import tw from "tailwind-react-native-classnames";
 import Pressable from "react-native/Libraries/Components/Pressable/Pressable";
 
+import Amplify from 'aws-amplify'
+import config from './src/aws-exports'
+Amplify.configure({
+    ...config,
+    Analytics: {
+        disabled: true,
+    },
+});
+
 
 const App = () => {
 
