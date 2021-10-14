@@ -17,8 +17,14 @@ const ProfileScreen = () => {
     const [gender, setGender] = useState();
     const [lookingFor, setLookingFor] = useState();
 
-    const save = () => {
+    const isValid = () => {
+        return name && bio && gender && lookingFor;
+    }
 
+    const save = () => {
+        if(!isValid()) {
+
+        }
     }
 
     return (
