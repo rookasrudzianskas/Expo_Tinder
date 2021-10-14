@@ -29,9 +29,6 @@ const ProfileScreen = () => {
         const getCurrentUser = async () => {
             const user = await Auth.currentAuthenticatedUser();
             const dbUsers = await DataStore.query(User, u => u.sub === user.attributes.sub);
-            if(dbUsers.length < 0) {
-                return;
-            }
 
             const dbUser = dbUsers[0];
             setUser(dbUser);
@@ -39,6 +36,10 @@ const ProfileScreen = () => {
             setBio(dbUser.bio);
             setGender(dbUser.gender);
             setLookingFor(dbUser.lookingFor);
+
+            if(dbUsers.length < 0) {
+                return;
+            }
 
             // ------------------------------------------------------------------------------
             if(user) {
