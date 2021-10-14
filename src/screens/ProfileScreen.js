@@ -23,10 +23,13 @@ const ProfileScreen = () => {
         return name && bio && gender && lookingFor;
     }
 
-    const save = () => {
-        if(!isValid()) {
+    const save = async () => {
+        if (!isValid()) {
             console.log('Not Valid');
         }
+
+        const user = await Auth.currentAuthenticatedUser();
+
         const newUser = new User({
             name: name,
             bio: bio,
