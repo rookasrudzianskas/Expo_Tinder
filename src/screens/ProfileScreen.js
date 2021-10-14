@@ -35,31 +35,37 @@ const ProfileScreen = () => {
                     <TextInput style={tw`mt-3 text-lg`} multiline numberOfLines={3} value={bio} onChangeText={setBio} placeholder={'Enter your bio'} />
                 </View>
 
+                <Text>Gender</Text>
+
                 <Picker
                     label="Gender"
                     selectedValue={gender}
+                    style={{height:50, width:100}}
                     onValueChange={(itemValue, itemIndex) =>
                         setGender(itemValue)
                     }>
                     <Picker.Item label="Male" value="MALE" />
                     <Picker.Item label="Female" value="FEMALE" />
+                    <Picker.Item label="Other" value="OTHER" />
                 </Picker>
 
-                <Picker
-                    label="Looking for"
-                    selectedValue={lookingFor}
-                    onValueChange={(itemValue, itemIndex) =>
-                        setLookingFor(itemValue)
-                    }>
-                    <Picker.Item label="Male" value="MALE" />
-                    <Picker.Item label="Female" value="FEMALE" />
-                </Picker>
+                <Text>Gender</Text>
+                {/*<Picker*/}
+                {/*    label="Looking for"*/}
+                {/*    selectedValue={lookingFor}*/}
+                {/*    // style={{height:50, width:100, marginTop: 50,}}*/}
+                {/*    onValueChange={(itemValue, itemIndex) =>*/}
+                {/*        setLookingFor(itemValue)*/}
+                {/*    }>*/}
+                {/*    <Picker.Item label="Male" value="MALE" />*/}
+                {/*    <Picker.Item label="Female" value="FEMALE" />*/}
+                {/*</Picker>*/}
 
-                <TouchableOpacity onPress={save}>
-                    <View style={tw`bg-green-500 px-10 mt-4 py-4 rounded-lg`}>
-                        <Text style={tw`font-bold`}>Save</Text>
-                    </View>
-                </TouchableOpacity>
+                {/*<TouchableOpacity onPress={save}>*/}
+                {/*    <View style={tw`bg-green-500 px-10 mt-36 py-4 rounded-lg`}>*/}
+                {/*        <Text style={tw`font-bold`}>Save</Text>*/}
+                {/*    </View>*/}
+                {/*</TouchableOpacity>*/}
             </View>
         </SafeAreaView>
     );
