@@ -30,6 +30,12 @@ const ProfileScreen = () => {
             const user = await Auth.currentAuthenticatedUser();
             const dbUsers = await DataStore.query(User, u => u.sub === user.attributes.sub);
 
+
+            if(dbUsers.length < 0) {
+                return;
+            }
+
+
             const dbUser = dbUsers[0];
             setUser(dbUser);
             setName(dbUser.name);
@@ -37,36 +43,6 @@ const ProfileScreen = () => {
             setGender(dbUser.gender);
             setLookingFor(dbUser.lookingFor);
 
-            if(dbUsers.length < 0) {
-                return;
-            }
-
-            // ------------------------------------------------------------------------------
-            if(user) {
-                user.name = name;
-                user.bio = bio;
-                user.gender = gender;
-                user.lookingFor = lookingFor;
-
-                await DataStore.save(user).then();
-            } else {
-                // create a new user
-                const user = await Auth.currentAuthenticatedUser();
-
-                const newUser = new User({
-                    sub: user.attributes.sub,
-                    name: name,
-                    bio: bio,
-                    gender,
-                    lookingFor,
-                    image: 'http://www.svietimonaujienos.lt/wp-content/uploads/2019/12/Rokas-e1575467263326.jpg',
-                });
-
-                DataStore.save(newUser).then();
-            }
-            //------------------------------------------------------------------------------
-
-            Alert.alert("User saved successfully");
         };
         getCurrentUser();
     }, []);
@@ -76,18 +52,32 @@ const ProfileScreen = () => {
             console.log('Not Valid');
         }
 
-        const user = await Auth.currentAuthenticatedUser();
+        // ------------------------------------------------------------------------------
+        if(user) {
+            user.name = name;
+            user.bio = bio;
+            user.gender = gender;
+            user.lookingFor = lookingFor;
 
-        const newUser = new User({
-            sub: user.attributes.sub,
-            name: name,
-            bio: bio,
-            gender,
-            lookingFor,
-            image: 'http://www.svietimonaujienos.lt/wp-content/uploads/2019/12/Rokas-e1575467263326.jpg',
-        });
+            await DataStore.save(user).then();
+        } else {
+            // create a new user
+            const authUser = await Auth.currentAuthenticatedUser();
 
-        DataStore.save(newUser).then();
+            const newUser = new User({
+                sub: authUser.attributes.sub,
+                name: name,
+                bio: bio,
+                gender,
+                lookingFor,
+                image: 'http://www.svietimonaujienos.lt/wp-content/uploads/2019/12/Rokas-e1575467263326.jpg',
+            });
+
+            DataStore.save(newUser).then();
+        }
+        //------------------------------------------------------------------------------
+
+        Alert.alert("User saved successfully");
     }
 
     return (
