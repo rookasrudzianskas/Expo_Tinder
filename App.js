@@ -18,7 +18,7 @@ const App = () => {
   return (
       <SafeAreaView style={{flex: 1,}}>
         <View style={styles.pageContainer}>
-            <View style={[tw`flex flex-row mt-16 -mb-6`, {justifyContent: 'space-around', width: '100%'}]}>
+            <View style={[tw`flex flex-row mt-6 -mb-20`, {justifyContent: 'space-around', width: '100%'}]}>
                 <Fontisto name="tinder" size={30} color={'#ff0065'} />
                 <MaterialCommunityIcons name="star-four-points" size={30} color={color} />
                 <Ionicons name="ios-chatbubbles" size={30} color={color} />
