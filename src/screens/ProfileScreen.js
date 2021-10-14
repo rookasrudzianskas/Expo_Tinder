@@ -1,14 +1,22 @@
 import React from 'react';
-import {Text, View, StyleSheet, SafeAreaView, Image} from 'react-native';
+import {Text, View, StyleSheet, SafeAreaView, Image, TouchableOpacity} from 'react-native';
 import tw from "tailwind-react-native-classnames";
 import users from "../../assets/data/users";
+import {Auth} from 'aws-amplify';
 
 const ProfileScreen = () => {
+
+    const signOutFunc = () => {
+        Auth.signOut();
+    }
     return (
 
         <SafeAreaView>
-            <View style={{width: '100%', flexGrow: 1, padding: 10}}>
+            <View style={{width: '100%', flexGrow: 1, padding: 10, justifyContent: 'center', alignItems: 'center'}}>
                <Text style={tw`text-lg font-bold`}>Profile</Text>
+                <TouchableOpacity onPress={signOutFunc}>
+                    <Text style={tw`text-xl font-bold text-green-500`}>Sign out</Text>
+                </TouchableOpacity>
             </View>
         </SafeAreaView>
     );
