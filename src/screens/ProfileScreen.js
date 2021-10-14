@@ -23,9 +23,15 @@ const ProfileScreen = () => {
                 </TouchableOpacity>
 
                 <View style={tw`mt-10`}>
-                    <TextInput value={name} onChangeText={setName} placeholder={'Enter your name'} />
-                    <TextInput multiline numberOfLines={3} value={bio} onChangeText={setBio} placeholder={'Enter your bio'} />
+                    <TextInput value={name} style={tw`text-lg`} onChangeText={setName} placeholder={'Enter your name'} />
+                    <TextInput style={tw`mt-3 text-lg`} multiline numberOfLines={3} value={bio} onChangeText={setBio} placeholder={'Enter your bio'} />
                 </View>
+
+                <TouchableOpacity>
+                    <View style={tw`bg-green-500 px-10 mt-4 py-4 rounded-lg`}>
+                        <Text style={tw`font-bold`}>Save</Text>
+                    </View>
+                </TouchableOpacity>
             </View>
         </SafeAreaView>
     );
