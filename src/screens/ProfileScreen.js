@@ -8,6 +8,7 @@ const ProfileScreen = () => {
 
     const signOutFunc = () => {
         Auth.signOut();
+    //     sign out
     }
     return (
 
