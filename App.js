@@ -6,6 +6,7 @@ import {
 } from 'react-native';
 import HomeScreen from "./src/screens/HomeScreen";
 import MatchesScreen from "./src/screens/MatchesScreen";
+import {Fontisto} from "@expo/vector-icons";
 
 
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
   return (
     <View style={styles.pageContainer}>
         {/*<HomeScreen />*/}
+        <Fontisto name="tinder" size={24} color={'#ff0065'} />
         <MatchesScreen />
       <StatusBar style="auto" />
     </View>
