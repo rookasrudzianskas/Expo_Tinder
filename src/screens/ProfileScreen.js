@@ -1,5 +1,5 @@
-import React from 'react';
-import {Text, View, StyleSheet, SafeAreaView, Image, TouchableOpacity} from 'react-native';
+import React, {useState} from 'react';
+import {Text, View, StyleSheet, SafeAreaView, Image, TouchableOpacity, TextInput} from 'react-native';
 import tw from "tailwind-react-native-classnames";
 import users from "../../assets/data/users";
 import {Auth} from 'aws-amplify';
@@ -10,14 +10,22 @@ const ProfileScreen = () => {
         Auth.signOut();
     //     sign out
     }
+
+    const [name, setName] = useState('');
+    const [bio, setBio] = useState('');
     return (
 
         <SafeAreaView>
-            <View style={{width: '100%', flexGrow: 1, padding: 10, justifyContent: 'center', alignItems: 'center'}}>
+            <View style={{width: '100%', flexGrow: 1, padding: 10, alignItems: 'center'}}>
                <Text style={tw`text-lg font-bold`}>Profile</Text>
                 <TouchableOpacity onPress={signOutFunc}>
                     <Text style={tw`text-xl font-bold text-green-500`}>Sign out</Text>
                 </TouchableOpacity>
+
+                <View style={tw`mt-10`}>
+                    <TextInput value={name} onChangeText={setName} placeholder={'Enter your name'} />
+                    <TextInput value={bio} onChangeText={setBio} placeholder={'Enter your name'} />
+                </View>
             </View>
         </SafeAreaView>
     );
