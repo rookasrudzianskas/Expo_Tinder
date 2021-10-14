@@ -31,6 +31,7 @@ const ProfileScreen = () => {
         const user = await Auth.currentAuthenticatedUser();
 
         const newUser = new User({
+            sub: user.attributes.sub,
             name: name,
             bio: bio,
             gender,
