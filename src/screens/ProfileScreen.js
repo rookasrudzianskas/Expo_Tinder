@@ -8,18 +8,7 @@ const ProfileScreen = () => {
 
         <SafeAreaView>
             <View style={{width: '100%', flexGrow: 1, padding: 10}}>
-                <View style={{padding: 10,}}>
-                    <Text style={tw`font-bold text-xl text-pink-400`}>
-                        New Matches 🚀
-                    </Text>
-                    <View style={styles.users}>
-                        {users.map((user, index) => (
-                            <View key={index} style={[styles.user, {marginHorizontal: 10, marginTop: 6}]}>
-                                <Image source={{uri: user.image}} style={styles.image} />
-                            </View>
-                        )) }
-                    </View>
-                </View>
+               <Text style={tw`text-lg font-bold`}>Profile</Text>
             </View>
         </SafeAreaView>
     );

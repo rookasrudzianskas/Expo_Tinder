@@ -14,6 +14,7 @@ import Pressable from "react-native/Libraries/Components/Pressable/Pressable";
 import Amplify from 'aws-amplify'
 import config from './src/aws-exports';
 import { withAuthenticator } from "aws-amplify-react-native";
+import ProfileScreen from "./src/screens/ProfileScreen";
 
 Amplify.configure({
     ...config,
@@ -40,12 +41,15 @@ const App = () => {
                     <Pressable onPress={() => setActiveScreen('CHAT')}>
                         <Ionicons name="ios-chatbubbles" size={30} color={activeScreen === 'CHAT' ? activeColor  : color} />
                     </Pressable>
-                    <FontAwesome name="user" size={30} color={color} />
+                    <Pressable onPress={() => setActiveScreen('PROFILE')}>
+                        <FontAwesome name="user" size={30} color={activeScreen === 'PROFILE' ? activeColor  : color} />
+                    </Pressable>
                 </View>
 
                 {/*<HomeScreen />*/}
                 {activeScreen === 'HOME' && <HomeScreen />}
                 {activeScreen === 'CHAT' && <MatchesScreen />}
+                {activeScreen === 'CHAT' && <ProfileScreen />}
                 {/*<MatchesScreen />*/}
                 <StatusBar style="auto" />
             </View>
