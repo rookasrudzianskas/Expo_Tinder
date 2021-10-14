@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Text, View, StyleSheet, SafeAreaView, Image, TouchableOpacity, TextInput} from 'react-native';
+import {Text, View, StyleSheet, SafeAreaView, Image, TouchableOpacity, TextInput, Alert} from 'react-native';
 import tw from "tailwind-react-native-classnames";
 import users from "../../assets/data/users";
 import {Auth} from 'aws-amplify';
@@ -33,13 +33,21 @@ const ProfileScreen = () => {
                 return;
             }
 
+            const dbUser = dbUsers[0];
+            setUser(dbUser);
+            setName(dbUser.name);
+            setBio(dbUser.bio);
+            setGender(dbUser.gender);
+            setLookingFor(dbUser.lookingFor);
+
+            // ------------------------------------------------------------------------------
             if(user) {
                 user.name = name;
                 user.bio = bio;
                 user.gender = gender;
                 user.lookingFor = lookingFor;
 
-                DataStore.save(user).then();
+                await DataStore.save(user).then();
             } else {
                 // create a new user
                 const user = await Auth.currentAuthenticatedUser();
@@ -55,13 +63,9 @@ const ProfileScreen = () => {
 
                 DataStore.save(newUser).then();
             }
+            //------------------------------------------------------------------------------
 
-            const dbUser = dbUsers[0];
-            setUser(dbUser);
-            setName(dbUser.name);
-            setBio(dbUser.bio);
-            setGender(dbUser.gender);
-            setLookingFor(dbUser.lookingFor);
+            Alert.alert("User saved successfully");
         };
         getCurrentUser();
     }, []);
