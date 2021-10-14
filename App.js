@@ -8,20 +8,23 @@ import {
 import HomeScreen from "./src/screens/HomeScreen";
 import MatchesScreen from "./src/screens/MatchesScreen";
 import {FontAwesome, Fontisto, Ionicons, MaterialCommunityIcons} from "@expo/vector-icons";
+import tw from "tailwind-react-native-classnames";
 
 
 const App = () => {
 
-    const color = '#cbc9c9';
+    const color = '#b5b5b5';
 
   return (
       <SafeAreaView style={{flex: 1,}}>
         <View style={styles.pageContainer}>
             {/*<HomeScreen />*/}
-            <Fontisto name="tinder" size={24} color={'#ff0065'} />
-            <MaterialCommunityIcons name="star-four-points" size={24} color={color} />
-            <Ionicons name="ios-chatbubbles" size={24} color={color} />
-            <FontAwesome name="user" size={24} color={color} />
+            <View style={[tw`flex flex-row`, {justifyContent: 'space-around', width: '100%'}]}>
+                <Fontisto name="tinder" size={24} color={'#ff0065'} />
+                <MaterialCommunityIcons name="star-four-points" size={24} color={color} />
+                <Ionicons name="ios-chatbubbles" size={24} color={color} />
+                <FontAwesome name="user" size={24} color={color} />
+            </View>
             <MatchesScreen />
           <StatusBar style="auto" />
         </View>
