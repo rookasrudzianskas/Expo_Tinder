@@ -32,6 +32,10 @@ const ProfileScreen = () => {
             }
 
             const dbUser = dbUsers[0];
+            setName(dbUser.name);
+            setBio(dbUser.bio);
+            setGender(dbUser.gender);
+            setLookingFor(dbUser.lookingFor);
         };
         getCurrentUser();
     }, []);
