@@ -1,10 +1,21 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Text, View, StyleSheet, SafeAreaView, Image} from 'react-native';
 import tw from "tailwind-react-native-classnames";
 import users from "../../assets/data/users";
 import {DataStore} from 'aws-amplify';
+import {Match} from "../models";
 
 const MatchesScreen = () => {
+    const [matches, setMatches] = useState([]);
+
+    useEffect(() =>  {
+        const fetchMatches = async () => {
+            const result = await DataStore.query(Match);
+            console.log(result);
+        };
+        fetchMatches();
+    }, []);
+
     return (
 
         <SafeAreaView>
