@@ -35,14 +35,14 @@ const HomeScreen = () => {
     }, []);
 
     const onSwipeLeft = () => {
-        if(!currentUser) {
+        if(!currentUser || !me) {
             return;
         }
         console.warn('Swiped Left', currentUser?.name);
     }
 
     const onSwipeRight = () => {
-        if(!currentUser) {
+        if(!currentUser || !me) {
             return;
         }
         console.warn('Swiped right', currentUser?.name);
