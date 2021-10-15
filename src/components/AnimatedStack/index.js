@@ -97,12 +97,12 @@ const AnimatedStack = (props) => {
                 return;
             }
 
-            // // will return 1 if the sign is +, if it is - it will return -1
-            // translateX.value = withSpring(hiddenTranslateX * Math.sign(event.velocityX),
-            //     {},
-            //     () => runOnJS(setCurrentIndex)(currentIndex + 1),
-            // );
-            //
+            // will return 1 if the sign is +, if it is - it will return -1
+            translateX.value = withSpring(hiddenTranslateX * Math.sign(event.velocityX),
+                {},
+                () => runOnJS(setCurrentIndex)(currentIndex + 1),
+            );
+
             // const onSwipe = event.velocityX > 0 ? onSwipeRight : onSwipeLeft;
             // onSwipe && runOnJS(onSwipe)(currentProfile);
                 },
