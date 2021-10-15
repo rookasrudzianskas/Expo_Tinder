@@ -15,12 +15,19 @@ import users from "../../assets/data/users";
 
 const HomeScreen = () => {
 
-    const onSwipeLeft = (user) => {
-        console.log('Swiped Left', user?.name);
+    const [currentUser, setCurrentUser] = useState(null);
+    const onSwipeLeft = () => {
+        if(!currentUser) {
+            return;
+        }
+        console.warn('Swiped Left', currentUser?.name);
     }
 
-    const onSwipeRight = (user) => {
-        console.log('Swiped right', user?.name);
+    const onSwipeRight = () => {
+        if(!currentUser) {
+            return;
+        }
+        console.warn('Swiped right', currentUser?.name);
     }
 
     const [users, setUsers] = useState([]);
@@ -37,7 +44,7 @@ const HomeScreen = () => {
 
     return (
         <View style={styles.pageContainer}>
-            {users.length > 0  && <AnimatedStack onSwipeLeft={onSwipeLeft} onSwipeRight={onSwipeRight} data={users} renderItem={({item}) => <TinderCard user={item} />} />}
+            {users.length > 0  && <AnimatedStack setCurrentUser={setCurrentUser} onSwipeLeft={onSwipeLeft} onSwipeRight={onSwipeRight} data={users} renderItem={({item}) => <TinderCard user={item} />} />}
             <View style={{flexDirection: 'row', width: '100%', justifyContent: 'space-around', marginHorizontal: 10, marginTop: -80}}>
                 <TouchableOpacity>
                     <View style={tw`bg-gray-100 p-5 rounded-full shadow-md`}>
