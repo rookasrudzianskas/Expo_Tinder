@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
 import {
     Image,
     ImageBackground,
@@ -84,7 +84,7 @@ const AnimatedStack = (props) => {
         opacity: interpolate(translateX.value, [0, -hiddenTranslateX / 5], [0, 1]),
     }));
 
-    const gestureHandler = useAnimatedGestureHandler({
+    const gestureHandler = useMemo(useAnimatedGestureHandler({
         onStart: (_, context) => {
             context.startX = translateX.value;
         },
@@ -106,7 +106,7 @@ const AnimatedStack = (props) => {
             const onSwipe = event.velocityX > 0 ? onSwipeRight : onSwipeLeft;
             runOnJS(onSwipe)(currentProfile);
         },
-    });
+    }), [],);
 
     useEffect(() => {
         translateX.value = 0;
