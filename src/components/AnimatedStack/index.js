@@ -84,10 +84,6 @@ const AnimatedStack = (props) => {
         opacity: interpolate(translateX.value, [0, -hiddenTranslateX / 5], [0, 1]),
     }));
 
-    const onSwipeLeftRight = (args, isRight) => {
-        const onSwipe = isRight.velocityX > 0 ? onSwipeRight : onSwipeLeft;
-        onSwipe(args);
-    };
 
     const gestureHandler = useAnimatedGestureHandler({
         onStart: (_, context) => {
@@ -108,8 +104,8 @@ const AnimatedStack = (props) => {
                 () => runOnJS(setCurrentIndex)(currentIndex + 1),
             );
 
-            const isRight = event.velocityX > 0;
-            runOnJS(onSwipeLeftRight)(currentProfile, isRight);
+            const onSwipe = event.velocityX > 0 ? onSwipeRight : onSwipeLeft;
+            onSwipe && runOnJS(onSwipe)(currentProfile);
                 },
             },
         [currentProfile],
