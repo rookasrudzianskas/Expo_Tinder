@@ -4,7 +4,7 @@ enum Genders {
   OTHER
 }
 
-type Match @model @auth(rules: [{allow: private}]) {
+type Match @model @auth(rules: [{allow: public}]) {
   id: ID!
 
   User1ID: ID!
@@ -17,7 +17,7 @@ type Match @model @auth(rules: [{allow: private}]) {
 }
 
 
-type User @model @auth(rules: [{allow: private}]) {
+type User @model @auth(rules: [{allow: public}]) {
   id: ID!
   name: String!
   image: String
@@ -28,4 +28,3 @@ type User @model @auth(rules: [{allow: private}]) {
 }
 
 
- 
