@@ -7,10 +7,10 @@ enum Genders {
 type Match @model @auth(rules: [{allow: private}]) {
   id: ID!
 
-  User1ID: String!
+  User1ID: ID!
   User1: User @connection(fields: ["User1ID"])
 
-  User2ID: String
+  User2ID: ID!
   User2: User @connection(fields: ["User2ID"])
 
   isMatch: Boolean!
