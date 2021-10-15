@@ -113,37 +113,37 @@ const AnimatedStack = (props) => {
         setNextIndex(currentIndex + 1);
     }, [currentIndex, translateX]);
 
-    // return (
-    //     <View style={styles.root}>
-    //         {nextProfile && (
-    //             <View style={styles.nextCardContainer}>
-    //                 <Animated.View style={[styles.animatedCard, nextCardStyle]}>
-    //                     {renderItem({item: nextProfile })}
-    //                 </Animated.View>
-    //             </View>
-    //         )}
-    //         {currentProfile ? (
-    //             <PanGestureHandler onGestureEvent={gestureHandler} >
-    //                 <Animated.View style={[styles.animatedCard, cardStyle]}>
-    //                     <Animated.Image source={Like} style={[styles.like, {left: 10}, likeStyle]} />
-    //                     <Animated.Image source={Nope} style={[styles.like, {right: 10}, nopeStyle]} />
-    //                     {renderItem({item: currentProfile })}
-    //                 </Animated.View>
-    //             </PanGestureHandler>
-    //         ) : (
-    //             <View>
-    //                 <Text style={tw`text-xl font-bold`}>No users found</Text>
-    //             </View>
-    //         )}
-    //
-    //         {/*<TouchableOpacity onPress={() => sharedValue.value = withSpring(Math.random())}>*/}
-    //         {/*    <Text style={tw``}>Change Value</Text>*/}
-    //         {/*</TouchableOpacity>*/}
-    //     </View>
-    // );
     return (
-        <Text>Rokas</Text>
-    )
+        <View style={styles.root}>
+            {nextProfile && (
+                <View style={styles.nextCardContainer}>
+                    <Animated.View style={[styles.animatedCard, nextCardStyle]}>
+                        {renderItem({item: nextProfile })}
+                    </Animated.View>
+                </View>
+            )}
+            {currentProfile ? (
+                <PanGestureHandler onGestureEvent={gestureHandler} >
+                    <Animated.View style={[styles.animatedCard, cardStyle]}>
+                        <Animated.Image source={Like} style={[styles.like, {left: 10}, likeStyle]} />
+                        <Animated.Image source={Nope} style={[styles.like, {right: 10}, nopeStyle]} />
+                        {renderItem({item: currentProfile })}
+                    </Animated.View>
+                </PanGestureHandler>
+            ) : (
+                <View>
+                    <Text style={tw`text-xl font-bold`}>No users found</Text>
+                </View>
+            )}
+
+            {/*<TouchableOpacity onPress={() => sharedValue.value = withSpring(Math.random())}>*/}
+            {/*    <Text style={tw``}>Change Value</Text>*/}
+            {/*</TouchableOpacity>*/}
+        </View>
+    );
+    // return (
+    //     <Text>Rokas</Text>
+    // )
 }
 
 const styles = StyleSheet.create({
