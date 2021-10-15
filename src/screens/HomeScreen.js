@@ -9,7 +9,7 @@ import AnimatedStack from "./../../src/components/AnimatedStack";
 import {Entypo, FontAwesome, Ionicons} from "@expo/vector-icons";
 import tw from "tailwind-react-native-classnames";
 import {User} from "../models";
-import {DataStore} from 'aws-amplify';
+import {Auth, DataStore} from 'aws-amplify';
 import users from "../../assets/data/users";
 
 
@@ -17,6 +17,22 @@ const HomeScreen = () => {
 
     const [currentUser, setCurrentUser] = useState(null);
     const [me, setMe] = useState(null);
+
+    useEffect(() => {
+        const getCurrentUser = async () => {
+            const user = await Auth.currentAuthenticatedUser();
+            const dbUsers = await DataStore.query(User, u => u.sub === user.attributes.sub);
+
+
+            if(dbUsers.length < 0) {
+                return;
+            }
+
+
+            setMe(dbUsers[0]);
+        };
+        getCurrentUser();
+    }, []);
 
     const onSwipeLeft = () => {
         if(!currentUser) {
