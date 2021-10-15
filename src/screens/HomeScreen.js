@@ -31,6 +31,8 @@ const HomeScreen = () => {
         fetchUsers();
     }, []);
 
+    console.log(users);
+
     return (
         <View style={styles.pageContainer}>
             <AnimatedStack onSwipeLeft={onSwipeLeft} onSwipeRight={onSwipeRight} data={users} renderItem={({item}) => <TinderCard user={item} />} />
