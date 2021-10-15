@@ -26,3 +26,5 @@ type User @model @auth(rules: [{allow: private}]) {
   lookingFor: Genders!
   sub: String!
 }
+
+
