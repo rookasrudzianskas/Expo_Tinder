@@ -26,12 +26,15 @@ const HomeScreen = () => {
 
     useEffect(() => {
         const fetchUsers = async () => {
-            setUsers(await DataStore.query(User))
+            const fetchedUsers = await DataStore.query(User);
+            setUsers(fetchedUsers);
         }
         fetchUsers();
     }, []);
 
     // console.warn(users);
+
+    console.log(users);
 
     return (
         <View style={styles.pageContainer}>
