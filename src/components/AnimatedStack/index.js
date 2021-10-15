@@ -106,7 +106,9 @@ const AnimatedStack = (props) => {
             const onSwipe = event.velocityX > 0 ? onSwipeRight : onSwipeLeft;
             onSwipe && runOnJS(onSwipe)(currentProfile);
         },
-    }, [], );
+    },
+        [],
+        );
 
     useEffect(() => {
         translateX.value = 0;
@@ -123,7 +125,7 @@ const AnimatedStack = (props) => {
                 </View>
             )}
             {currentProfile ? (
-                <PanGestureHandler>
+                <PanGestureHandler onGestureEvent={gestureHandler}>
                     <Animated.View style={[styles.animatedCard, cardStyle]}>
                         <Animated.Image source={Like} style={[styles.like, {left: 10}, likeStyle]} />
                         <Animated.Image source={Nope} style={[styles.like, {right: 10}, nopeStyle]} />
