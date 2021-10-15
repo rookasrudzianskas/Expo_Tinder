@@ -8,6 +8,8 @@ import TinderCard from "./../../src/components/TinderCard";
 import AnimatedStack from "./../../src/components/AnimatedStack";
 import {Entypo, FontAwesome, Ionicons} from "@expo/vector-icons";
 import tw from "tailwind-react-native-classnames";
+import {User} from "../models";
+import {DataStore} from 'aws-amplify';
 
 
 const HomeScreen = () => {
@@ -21,6 +23,13 @@ const HomeScreen = () => {
     }
 
     const [users, setUsers] = useState([]);
+
+    useEffect(() => {
+        const fetchUsers = async () => {
+            setUsers(await DataStore.query(User))
+        }
+        fetchUsers();
+    }, []);
 
     return (
         <View style={styles.pageContainer}>
