@@ -8,7 +8,7 @@ import TinderCard from "./../../src/components/TinderCard";
 import AnimatedStack from "./../../src/components/AnimatedStack";
 import {Entypo, FontAwesome, Ionicons} from "@expo/vector-icons";
 import tw from "tailwind-react-native-classnames";
-import {User} from "../models";
+import {Match, User} from "../models";
 import {Auth, DataStore} from 'aws-amplify';
 import users from "../../assets/data/users";
 
@@ -45,6 +45,13 @@ const HomeScreen = () => {
         if(!currentUser || !me) {
             return;
         }
+
+        DataStore.save(new Match({
+            User1ID: me.id,
+            User2ID: currentUser.id,
+                }),
+            );
+
         console.warn('Swiped right', currentUser?.name);
     }
 
