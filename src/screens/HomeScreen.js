@@ -45,7 +45,6 @@ const HomeScreen = () => {
         if(!currentUser || !me) {
             return;
         }
-
                 DataStore.save(new Match({
                     User1ID: me.id,
                     User2ID: currentUser.id,
