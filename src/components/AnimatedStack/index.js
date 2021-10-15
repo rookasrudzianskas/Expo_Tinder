@@ -122,7 +122,7 @@ const AnimatedStack = (props) => {
                     </Animated.View>
                 </View>
             )}
-            {currentProfile && (
+            {currentProfile ? (
                 <PanGestureHandler onGestureEvent={gestureHandler} >
                     <Animated.View style={[styles.animatedCard, cardStyle]}>
                         <Animated.Image source={Like} style={[styles.like, {left: 10}, likeStyle]} />
@@ -130,6 +130,10 @@ const AnimatedStack = (props) => {
                         {renderItem({item: currentProfile })}
                     </Animated.View>
                 </PanGestureHandler>
+            ) : (
+                <View>
+                    <Text style={tw`text-xl font-bold`}>No users found</Text>
+                </View>
             )}
 
             {/*<TouchableOpacity onPress={() => sharedValue.value = withSpring(Math.random())}>*/}
