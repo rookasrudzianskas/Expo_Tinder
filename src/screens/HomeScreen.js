@@ -38,7 +38,7 @@ const HomeScreen = () => {
 
     return (
         <View style={styles.pageContainer}>
-            <AnimatedStack onSwipeLeft={onSwipeLeft} onSwipeRight={onSwipeRight} data={users} renderItem={({item}) => <TinderCard user={item} />} />
+            {users.length > 0  && <AnimatedStack onSwipeLeft={onSwipeLeft} onSwipeRight={onSwipeRight} data={users} renderItem={({item}) => <TinderCard user={item} />} />}
             <View style={{flexDirection: 'row', width: '100%', justifyContent: 'space-around', marginHorizontal: 10, marginTop: -80}}>
                 <TouchableOpacity>
                     <View style={tw`bg-gray-100 p-5 rounded-full shadow-md`}>
