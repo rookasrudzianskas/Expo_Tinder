@@ -10,6 +10,7 @@ import {Entypo, FontAwesome, Ionicons} from "@expo/vector-icons";
 import tw from "tailwind-react-native-classnames";
 import {User} from "../models";
 import {DataStore} from 'aws-amplify';
+import users from "../../assets/data/users";
 
 
 const HomeScreen = () => {
@@ -22,15 +23,15 @@ const HomeScreen = () => {
         console.log('Swiped right', user?.name);
     }
 
-    const [users, setUsers] = useState([]);
+    // const [users, setUsers] = useState([]);
 
-    useEffect(() => {
-        const fetchUsers = async () => {
-            const fetchedUsers = await DataStore.query(User);
-            setUsers(fetchedUsers);
-        }
-        fetchUsers();
-    }, []);
+    // useEffect(() => {
+    //     const fetchUsers = async () => {
+    //         const fetchedUsers = await DataStore.query(User);
+    //         setUsers(fetchedUsers);
+    //     }
+    //     fetchUsers();
+    // }, []);
 
     // console.warn(users);
 
