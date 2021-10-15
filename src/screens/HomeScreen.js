@@ -16,6 +16,8 @@ import users from "../../assets/data/users";
 const HomeScreen = () => {
 
     const [currentUser, setCurrentUser] = useState(null);
+    const [me, setMe] = useState(null);
+
     const onSwipeLeft = () => {
         if(!currentUser) {
             return;
