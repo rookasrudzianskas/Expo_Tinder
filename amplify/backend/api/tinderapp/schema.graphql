@@ -1,6 +1,8 @@
 type Match @model @auth(rules: [{allow: private}]) {
   id: ID!
   User1: User @connection
+  User1ID: String!
+  User2ID: String
   User2: User @connection
 }
 

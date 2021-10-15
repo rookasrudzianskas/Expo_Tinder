@@ -120,7 +120,7 @@ const AnimatedStack = (props) => {
 
     useEffect(() =>  {
         setCurrentUser(currentProfile);
-    }, [currentProfile]);
+    }, [currentProfile, setCurrentUser]);
 
 
     return (

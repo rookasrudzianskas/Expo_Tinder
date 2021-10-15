@@ -23,6 +23,20 @@ export const schema = {
                         "targetName": "matchUser1Id"
                     }
                 },
+                "User1ID": {
+                    "name": "User1ID",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "User2ID": {
+                    "name": "User2ID",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
                 "User2": {
                     "name": "User2",
                     "isArray": false,
@@ -188,5 +202,5 @@ export const schema = {
         }
     },
     "nonModels": {},
-    "version": "fa09cf865a67a5ad38c95b60d79468c6"
+    "version": "0f5b10d28e8445c95872ced8948dc089"
 };
