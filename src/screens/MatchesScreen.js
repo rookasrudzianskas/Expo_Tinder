@@ -2,6 +2,7 @@ import React from 'react';
 import {Text, View, StyleSheet, SafeAreaView, Image} from 'react-native';
 import tw from "tailwind-react-native-classnames";
 import users from "../../assets/data/users";
+import {DataStore} from 'aws-amplify';
 
 const MatchesScreen = () => {
     return (
