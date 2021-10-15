@@ -86,6 +86,7 @@ const AnimatedStack = (props) => {
 
     const gestureHandler = useAnimatedGestureHandler({
         onStart: (_, context) => {
+            'worklet'
             context.startX = translateX.value;
         },
         onActive: (event, context) => {
@@ -105,8 +106,8 @@ const AnimatedStack = (props) => {
 
             const onSwipe = event.velocityX > 0 ? onSwipeRight : onSwipeLeft;
             onSwipe && runOnJS(onSwipe)(currentProfile);
-        },
-    },
+                },
+            },
         [],
         );
 
@@ -125,7 +126,7 @@ const AnimatedStack = (props) => {
                 </View>
             )}
             {currentProfile ? (
-                <PanGestureHandler onGestureEvent={gestureHandler}>
+                <PanGestureHandler >
                     <Animated.View style={[styles.animatedCard, cardStyle]}>
                         <Animated.Image source={Like} style={[styles.like, {left: 10}, likeStyle]} />
                         <Animated.Image source={Nope} style={[styles.like, {right: 10}, nopeStyle]} />
