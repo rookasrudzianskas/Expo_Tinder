@@ -28,3 +28,4 @@ type User @model @auth(rules: [{allow: private}]) {
 }
 
 
+ 

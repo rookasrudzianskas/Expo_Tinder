@@ -11,7 +11,7 @@ const MatchesScreen = () => {
     useEffect(() =>  {
         const fetchMatches = async () => {
             const result = await DataStore.query(Match);
-            console.log(result);
+            console.warn(result);
         };
         fetchMatches();
     }, []);
