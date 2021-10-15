@@ -22,16 +22,16 @@ const HomeScreen = () => {
     const onSwipeRight = (user) => {
         console.log('Swiped right', user?.name);
     }
-    //
-    // const [users, setUsers] = useState([]);
-    //
-    // useEffect(() => {
-    //     const fetchUsers = async () => {
-    //         const fetchedUsers = await DataStore.query(User);
-    //         setUsers(fetchedUsers);
-    //     }
-    //     fetchUsers();
-    // }, []);
+
+    const [users, setUsers] = useState([]);
+
+    useEffect(() => {
+        const fetchUsers = async () => {
+            const fetchedUsers = await DataStore.query(User);
+            setUsers(fetchedUsers);
+        }
+        fetchUsers();
+    }, []);
 
     // console.warn(users);
 

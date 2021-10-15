@@ -107,7 +107,7 @@ const AnimatedStack = (props) => {
             onSwipe && runOnJS(onSwipe)(currentProfile);
                 },
             },
-        [],
+        [currentProfile],
 
     );
 
