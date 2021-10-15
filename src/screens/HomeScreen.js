@@ -35,8 +35,6 @@ const HomeScreen = () => {
 
     // console.warn(users);
 
-    console.log(users);
-
     return (
         <View style={styles.pageContainer}>
             {users.length > 0  && <AnimatedStack onSwipeLeft={onSwipeLeft} onSwipeRight={onSwipeRight} data={users} renderItem={({item}) => <TinderCard user={item} />} />}

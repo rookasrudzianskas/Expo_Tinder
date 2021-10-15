@@ -86,7 +86,6 @@ const AnimatedStack = (props) => {
 
     const gestureHandler = useAnimatedGestureHandler({
         onStart: (_, context) => {
-            'worklet'
             context.startX = translateX.value;
         },
         onActive: (event, context) => {
