@@ -86,25 +86,25 @@ const AnimatedStack = (props) => {
 
     const gestureHandler = useAnimatedGestureHandler({
         onStart: (_, context) => {
-            context.startX = translateX.value;
+            // context.startX = translateX.value;
         },
         onActive: (event, context) => {
-            translateX.value = context.startX + event.translationX;
+            // translateX.value = context.startX + event.translationX;
         },
         onEnd: (event) => {
-            if(Math.abs(event.velocityX) < SWIPE_VELOCITY) {
-                translateX.value = withSpring(0);
-                return;
-            }
-
-            // will return 1 if the sign is +, if it is - it will return -1
-            translateX.value = withSpring(hiddenTranslateX * Math.sign(event.velocityX),
-                {},
-                () => runOnJS(setCurrentIndex)(currentIndex + 1),
-            );
-
-            const onSwipe = event.velocityX > 0 ? onSwipeRight : onSwipeLeft;
-            onSwipe && runOnJS(onSwipe)(currentProfile);
+            // if(Math.abs(event.velocityX) < SWIPE_VELOCITY) {
+            //     translateX.value = withSpring(0);
+            //     return;
+            // }
+            //
+            // // will return 1 if the sign is +, if it is - it will return -1
+            // translateX.value = withSpring(hiddenTranslateX * Math.sign(event.velocityX),
+            //     {},
+            //     () => runOnJS(setCurrentIndex)(currentIndex + 1),
+            // );
+            //
+            // const onSwipe = event.velocityX > 0 ? onSwipeRight : onSwipeLeft;
+            // onSwipe && runOnJS(onSwipe)(currentProfile);
                 },
             },
         [currentProfile],
