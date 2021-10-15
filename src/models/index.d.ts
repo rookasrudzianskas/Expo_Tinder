@@ -22,6 +22,7 @@ export declare class Match {
   readonly User1ID: string;
   readonly User2ID?: string;
   readonly User2?: User;
+  readonly isMatch: boolean;
   readonly createdAt?: string;
   readonly updatedAt?: string;
   constructor(init: ModelInit<Match, MatchMetaData>);

@@ -4,6 +4,7 @@ type Match @model @auth(rules: [{allow: private}]) {
   User1ID: String!
   User2ID: String
   User2: User @connection
+  isMatch: Boolean!
 }
 
 enum Genders {
