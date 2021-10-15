@@ -5,7 +5,6 @@ import {
     View
 } from 'react-native';
 import TinderCard from "./../../src/components/TinderCard";
-import users from '../../assets/data/users.js';
 import AnimatedStack from "./../../src/components/AnimatedStack";
 import {Entypo, FontAwesome, Ionicons} from "@expo/vector-icons";
 import tw from "tailwind-react-native-classnames";
@@ -20,6 +19,8 @@ const HomeScreen = () => {
     const onSwipeRight = (user) => {
         console.log('Swiped right', user?.name);
     }
+
+    const [users, setUsers] = useState([]);
 
     return (
         <View style={styles.pageContainer}>
