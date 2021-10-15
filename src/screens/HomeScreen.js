@@ -31,7 +31,7 @@ const HomeScreen = () => {
         fetchUsers();
     }, []);
 
-    console.log(users);
+    // console.warn(users);
 
     return (
         <View style={styles.pageContainer}>
