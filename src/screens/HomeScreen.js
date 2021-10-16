@@ -51,7 +51,8 @@ const HomeScreen = () => {
         ))
 
         if(myMatches.length > 0) {
-
+            console.warn('You already swiped right to this user');
+            return;
         }
                 DataStore.save(new Match({
                     User1ID: me.id,
