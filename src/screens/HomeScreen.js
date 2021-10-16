@@ -41,10 +41,12 @@ const HomeScreen = () => {
         console.warn('Swiped Left', currentUser?.name);
     }
 
-    const onSwipeRight = () => {
+    const onSwipeRight = async () => {
         if(!currentUser || !me) {
             return;
         }
+
+        const syncMatches =
                 DataStore.save(new Match({
                     User1ID: me.id,
                     User2ID: currentUser.id,
