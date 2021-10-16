@@ -59,6 +59,13 @@ const HomeScreen = () => {
             match.User1ID('eq', currentUser.id).User2ID('eq', me.id)
         ));
 
+        if(hisMatches.length > 0) {
+            console.log('Yay, this is a new match');
+            const hisMatch = hisMatches[0];
+            DataStore.save(DataStore.copyOf);
+
+        }
+
 
                 DataStore.save(new Match({
                     User1ID: me.id,
