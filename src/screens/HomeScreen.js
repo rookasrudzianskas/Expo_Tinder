@@ -47,7 +47,7 @@ const HomeScreen = () => {
         }
 
         const syncMatches = await DataStore.query(Match, match => (
-
+            match.User1ID('eq')
         ))
                 DataStore.save(new Match({
                     User1ID: me.id,
