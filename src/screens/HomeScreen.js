@@ -74,8 +74,6 @@ const HomeScreen = () => {
                         isMatch: false,
                     }),
                 );
-
-        console.warn('Swiped right', currentUser?.name);
     }
 
     const [users, setUsers] = useState([]);
