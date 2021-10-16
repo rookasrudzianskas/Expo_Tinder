@@ -46,9 +46,13 @@ const HomeScreen = () => {
             return;
         }
 
-        const syncMatches = await DataStore.query(Match, match => (
-            match.User1ID('eq')
+        const myMatches = await DataStore.query(Match, match => (
+            match.User1ID('eq').User2ID('eq', currentUser.id)
         ))
+
+        if(myMatches.length > 0) {
+
+        }
                 DataStore.save(new Match({
                     User1ID: me.id,
                     User2ID: currentUser.id,
