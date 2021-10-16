@@ -62,17 +62,18 @@ const HomeScreen = () => {
         if(hisMatches.length > 0) {
             console.log('Yay, this is a new match');
             const hisMatch = hisMatches[0];
-            DataStore.save(DataStore.copyOf);
-
+            await DataStore.save(Match.copyOf(hisMatch, updated => (updated.isMatch = true)),);
+            return;
         }
 
+        console.warn('Sending him a match request');
 
-                DataStore.save(new Match({
-                    User1ID: me.id,
-                    User2ID: currentUser.id,
-                    isMatch: false,
-                }),
-            );
+                await DataStore.save(new Match({
+                        User1ID: me.id,
+                        User2ID: currentUser.id,
+                        isMatch: false,
+                    }),
+                );
 
         console.warn('Swiped right', currentUser?.name);
     }
