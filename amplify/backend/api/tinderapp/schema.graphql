@@ -4,7 +4,10 @@ enum Genders {
   OTHER
 }
 
-type Match @model @auth(rules: [{allow: public}]) {
+type Match @model @auth(rules: [
+  {allow: groups, groups: ["SuperUser"]},
+  {allow: owner, queries: [get, list], mutations: [create]}
+]) {
   id: ID!
 
   User1ID: ID!
@@ -17,7 +20,10 @@ type Match @model @auth(rules: [{allow: public}]) {
 }
 
 
-type User @model @auth(rules: [{allow: public}]) {
+type User @model @auth(rules: [
+  {allow: groups, groups: ["SuperUser"]},
+  {allow: owner, queries: [get, list], mutations: [create]}
+]) {
   id: ID!
   name: String!
   image: String

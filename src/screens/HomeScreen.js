@@ -51,7 +51,7 @@ const HomeScreen = () => {
         ));
 
         if(myMatches.length > 0) {
-            console.warn('You already swiped right to this user');
+            console.warn('You already swiped right to this user');r
             return;
         }
 
