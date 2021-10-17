@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useEffect, useState} from 'react';
 import {
-    StyleSheet, TouchableOpacity,
+    StyleSheet, Text, TouchableOpacity,
     View
 } from 'react-native';
 import TinderCard from "./../../src/components/TinderCard";
@@ -46,34 +46,34 @@ const HomeScreen = () => {
             return;
         }
 
-        const myMatches = await DataStore.query(Match, match => (
-            match.User1ID('eq', me.id).User2ID('eq', currentUser.id)
-        ));
-
-        if(myMatches.length > 0) {
-            console.warn('You already swiped right to this user');
-            return;
-        }
-
-        const hisMatches = await DataStore.query(Match, match => (
-            match.User1ID('eq', currentUser.id).User2ID('eq', me.id)
-        ));
-
-        if(hisMatches.length > 0) {
-            console.log('Yay, this is a new match');
-            const hisMatch = hisMatches[0];
-            await DataStore.save(Match.copyOf(hisMatch, updated => (updated.isMatch = true)),);
-            return;
-        }
-
-        console.warn('Sending him a match request');
-
-                await DataStore.save(new Match({
-                        User1ID: me.id,
-                        User2ID: currentUser.id,
-                        isMatch: false,
-                    }),
-                );
+        // const myMatches = await DataStore.query(Match, match => (
+        //     match.User1ID('eq', me.id).User2ID('eq', currentUser.id)
+        // ));
+        //
+        // if(myMatches.length > 0) {
+        //     console.warn('You already swiped right to this user');
+        //     return;
+        // }
+        //
+        // const hisMatches = await DataStore.query(Match, match => (
+        //     match.User1ID('eq', currentUser.id).User2ID('eq', me.id)
+        // ));
+        //
+        // if(hisMatches.length > 0) {
+        //     console.log('Yay, this is a new match');
+        //     const hisMatch = hisMatches[0];
+        //     await DataStore.save(Match.copyOf(hisMatch, updated => (updated.isMatch = true)),);
+        //     return;
+        // }
+        //
+        // console.warn('Sending him a match request');
+        //
+        //         await DataStore.save(new Match({
+        //                 User1ID: me.id,
+        //                 User2ID: currentUser.id,
+        //                 isMatch: false,
+        //             }),
+        //         );
     }
 
     const [users, setUsers] = useState([]);
