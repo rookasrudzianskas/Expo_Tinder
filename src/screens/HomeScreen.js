@@ -81,6 +81,7 @@ const HomeScreen = () => {
     useEffect(() => {
         const fetchUsers = async () => {
             const fetchedUsers = await DataStore.query(User);
+            console.log(fetchUsers);
             setUsers(fetchedUsers);
         }
         fetchUsers();
