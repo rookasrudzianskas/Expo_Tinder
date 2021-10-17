@@ -13,6 +13,7 @@ export const getMatch = /* GraphQL */ `
       _lastChangedAt
       createdAt
       updatedAt
+      owner
       User1 {
         id
         name
@@ -26,6 +27,7 @@ export const getMatch = /* GraphQL */ `
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
       User2 {
         id
@@ -40,6 +42,7 @@ export const getMatch = /* GraphQL */ `
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
     }
   }
@@ -61,6 +64,7 @@ export const listMatches = /* GraphQL */ `
         _lastChangedAt
         createdAt
         updatedAt
+        owner
         User1 {
           id
           name
@@ -74,6 +78,7 @@ export const listMatches = /* GraphQL */ `
           _lastChangedAt
           createdAt
           updatedAt
+          owner
         }
         User2 {
           id
@@ -88,6 +93,7 @@ export const listMatches = /* GraphQL */ `
           _lastChangedAt
           createdAt
           updatedAt
+          owner
         }
       }
       nextToken
@@ -118,6 +124,7 @@ export const syncMatches = /* GraphQL */ `
         _lastChangedAt
         createdAt
         updatedAt
+        owner
         User1 {
           id
           name
@@ -131,6 +138,7 @@ export const syncMatches = /* GraphQL */ `
           _lastChangedAt
           createdAt
           updatedAt
+          owner
         }
         User2 {
           id
@@ -145,6 +153,7 @@ export const syncMatches = /* GraphQL */ `
           _lastChangedAt
           createdAt
           updatedAt
+          owner
         }
       }
       nextToken
@@ -167,6 +176,7 @@ export const getUser = /* GraphQL */ `
       _lastChangedAt
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -190,6 +200,7 @@ export const listUsers = /* GraphQL */ `
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
       nextToken
       startedAt
@@ -222,6 +233,7 @@ export const syncUsers = /* GraphQL */ `
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
       nextToken
       startedAt
