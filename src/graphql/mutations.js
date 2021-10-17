@@ -16,7 +16,6 @@ export const createMatch = /* GraphQL */ `
       _lastChangedAt
       createdAt
       updatedAt
-      owner
       User1 {
         id
         name
@@ -30,7 +29,6 @@ export const createMatch = /* GraphQL */ `
         _lastChangedAt
         createdAt
         updatedAt
-        owner
       }
       User2 {
         id
@@ -45,7 +43,6 @@ export const createMatch = /* GraphQL */ `
         _lastChangedAt
         createdAt
         updatedAt
-        owner
       }
     }
   }
@@ -65,7 +62,6 @@ export const updateMatch = /* GraphQL */ `
       _lastChangedAt
       createdAt
       updatedAt
-      owner
       User1 {
         id
         name
@@ -79,7 +75,6 @@ export const updateMatch = /* GraphQL */ `
         _lastChangedAt
         createdAt
         updatedAt
-        owner
       }
       User2 {
         id
@@ -94,7 +89,6 @@ export const updateMatch = /* GraphQL */ `
         _lastChangedAt
         createdAt
         updatedAt
-        owner
       }
     }
   }
@@ -114,7 +108,6 @@ export const deleteMatch = /* GraphQL */ `
       _lastChangedAt
       createdAt
       updatedAt
-      owner
       User1 {
         id
         name
@@ -128,7 +121,6 @@ export const deleteMatch = /* GraphQL */ `
         _lastChangedAt
         createdAt
         updatedAt
-        owner
       }
       User2 {
         id
@@ -143,7 +135,6 @@ export const deleteMatch = /* GraphQL */ `
         _lastChangedAt
         createdAt
         updatedAt
-        owner
       }
     }
   }
@@ -166,7 +157,6 @@ export const createUser = /* GraphQL */ `
       _lastChangedAt
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -188,7 +178,6 @@ export const updateUser = /* GraphQL */ `
       _lastChangedAt
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -210,7 +199,6 @@ export const deleteUser = /* GraphQL */ `
       _lastChangedAt
       createdAt
       updatedAt
-      owner
     }
   }
 `;
